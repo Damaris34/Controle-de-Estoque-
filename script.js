@@ -25,24 +25,29 @@ function gerarRelatorio() {
     const doc = new jsPDF();
 
     // Adicionando título ao relatório
-    doc.setFontSize(18);
-    doc.text("Relatório de Estoque", 10, 10);
+    doc.setFontSize(22);
+    doc.text("Relatório de Estoque", doc.internal.pageSize.getWidth() / 2, 20, { align: 'center' });
 
     // Adicionando data e hora de geração
     const dataHora = new Date().toLocaleString();
     doc.setFontSize(12);
-    doc.text(`Gerado em: ${dataHora}`, 10, 20);
+    doc.text(`Gerado em: ${dataHora}`, 10, 30);
 
     // Adicionando cabeçalho da tabela
     const table = document.getElementById('tabelaEstoque');
+    let y = 40;
+
+    // Adicionando cabeçalhos da tabela
     const headers = [];
     for (let i = 0; i < table.rows[0].cells.length; i++) {
         headers.push(table.rows[0].cells[i].textContent);
     }
-    doc.text(headers.join('\t'), 10, 30);
+    doc.setFontSize(14);
+    doc.text(headers.join('\t'), 10, y);
+    y += 10;
 
     // Adicionando linhas da tabela
-    let y = 40;
+    doc.setFontSize(12);
     for (let i = 1; i < table.rows.length; i++) {
         const cells = table.rows[i].cells;
         let text = '';
@@ -52,6 +57,11 @@ function gerarRelatorio() {
         doc.text(text, 10, y);
         y += 10;
     }
+
+    // Adicionando rodapé
+    const pageHeight = doc.internal.pageSize.getHeight();
+    doc.setFontSize(10);
+    doc.text("Controle de Estoque - Relatório Gerado por Sistema", 10, pageHeight - 10);
 
     // Salvando o PDF
     doc.save('relatorio_estoque.pdf');
