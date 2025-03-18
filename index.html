@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1>Controle de Estoque</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Adicionar Material ao Estoque</h2>
+            <form id="estoqueForm">
+                <div class="form-group">
+                    <label for="data">Data do Registro:</label>
+                    <input type="date" id="data" required>
+                </div>
+                <div class="form-group">
+                    <label for="nomeMaterial">Nome do Material:</label>
+                    <input type="text" id="nomeMaterial" required>
+                </div>
+                <div class="form-group">
+                    <label for="dataRelatorio">Data para Relatório:</label>
+                    <input type="date" id="dataRelatorio" required>
+                </div>
+                <button type="submit">Adicionar</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h2>Estoque Atual</h2>
+            <table id="tabelaEstoque">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Nome do Material</th>
+                        <th>Data para Relatório</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados de estoque serão exibidos aqui -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="pdf-section">
+            <button id="gerarRelatorio">Gerar Relatório PDF</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Controle de Estoque | Desenvolvido por Você</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
