@@ -65,4 +65,8 @@ function gerarRelatorio() {
     // Adicionando rodapé
     const pageHeight = doc.internal.pageSize.getHeight();
     doc.setFontSize(10);
-    d
+    doc.text("Controle de Estoque - Relatório Gerado por Sistema", 10, pageHeight - 10);
+
+    // Salvando o PDF
+    doc.save('relatorio_estoque.pdf');
+}
