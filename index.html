@@ -5,32 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Materiais</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <h1>Controle de Materiais</h1>
         <form id="materialForm">
-            <div class="form-group">
-                <div class="info-box">
+            <div class="form-row">
+                <div class="form-group">
                     <label for="data-registro">Data do Registro:</label>
                     <input type="date" id="data-registro" name="data-registro" required>
                 </div>
-                <div class="info-box">
+                <div class="form-group">
                     <label for="data-relatorio">Data para Relatório:</label>
                     <input type="date" id="data-relatorio" name="data-relatorio" required>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="info-box">
-                    <label for="responsavel">Nome do Responsável:</label>
-                    <input type="text" id="responsavel" name="responsavel" required>
-                </div>
+            <div class="form-group full-width">
+                <label for="responsavel">Nome do Responsável:</label>
+                <input type="text" id="responsavel" name="responsavel" required>
             </div>
-            <div class="form-group">
-                <div class="info-box">
-                    <label for="material">Nome do Material:</label>
-                    <input type="text" id="material" name="material" required>
-                </div>
+            <div class="form-group full-width">
+                <label for="material">Nome do Material:</label>
+                <input type="text" id="material" name="material" required>
             </div>
             <button type="button" onclick="gerarExcel()">Gerar Relatório em Excel</button>
         </form>
