@@ -1,16 +1,16 @@
-function exibirInformacoes() {
-    const data = document.getElementById('data').value;
+function gerarExcel() {
+    const dataRegistro = document.getElementById('data-registro').value;
     const responsavel = document.getElementById('responsavel').value;
     const material = document.getElementById('material').value;
-    const quantidade = document.getElementById('quantidade').value;
-    const materialFalta = document.getElementById('material-falta').value;
+    const dataRelatorio = document.getElementById('data-relatorio').value;
 
-    const resultadoDiv = document.getElementById('resultado');
-    resultadoDiv.innerHTML = `
-        <p><strong>Data:</strong> ${data}</p>
-        <p><strong>Nome do Responsável:</strong> ${responsavel}</p>
-        <p><strong>Nome do Material:</strong> ${material}</p>
-        <p><strong>Quantidade Utilizada:</strong> ${quantidade}</p>
-        <p><strong>Material em Falta:</strong> ${materialFalta}</p>
-    `;
+    const dados = [
+        { "Data do Registro": dataRegistro, "Nome do Responsável": responsavel, "Nome do Material": material, "Data para Relatório": dataRelatorio }
+    ];
+
+    const worksheet = XLSX.utils.json_to_sheet(dados);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Relatório');
+
+    XLSX.writeFile(workbook, 'Relatório_de_Materiais.xlsx');
 }
