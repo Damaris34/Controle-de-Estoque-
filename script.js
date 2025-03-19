@@ -14,4 +14,3 @@ function gerarExcel() {
 
     XLSX.writeFile(workbook, 'Relatório_de_Materiais.xlsx');
 }
-
