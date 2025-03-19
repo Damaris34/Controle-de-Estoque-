@@ -25,7 +25,8 @@ function gerarRelatorio() {
     const doc = new jsPDF();
 
     // Adicionando título ao relatório
-    doc.setFontSize(22);
+    doc.setFontSize(24);
+    doc.setTextColor(0, 0, 0);
     doc.text("Relatório de Estoque", doc.internal.pageSize.getWidth() / 2, 20, { align: 'center' });
 
     // Adicionando data e hora de geração
@@ -43,11 +44,14 @@ function gerarRelatorio() {
         headers.push(table.rows[0].cells[i].textContent);
     }
     doc.setFontSize(14);
+    doc.setTextColor(255, 255, 255);
+    doc.setFillColor(76, 175, 80); // Cor de fundo verde para o cabeçalho
     doc.text(headers.join('\t'), 10, y);
     y += 10;
 
     // Adicionando linhas da tabela
     doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
     for (let i = 1; i < table.rows.length; i++) {
         const cells = table.rows[i].cells;
         let text = '';
@@ -66,3 +70,4 @@ function gerarRelatorio() {
     // Salvando o PDF
     doc.save('relatorio_estoque.pdf');
 }
+ 
