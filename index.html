@@ -11,8 +11,8 @@
         <h1>Controle de Materiais</h1>
         <form id="materialForm">
             <div class="info-box">
-                <label for="data">Data:</label>
-                <input type="date" id="data" name="data" required>
+                <label for="data-registro">Data do Registro:</label>
+                <input type="date" id="data-registro" name="data-registro" required>
             </div>
             <div class="info-box">
                 <label for="responsavel">Nome do Responsável:</label>
@@ -23,17 +23,13 @@
                 <input type="text" id="material" name="material" required>
             </div>
             <div class="info-box">
-                <label for="quantidade">Quantidade Utilizada:</label>
-                <input type="number" id="quantidade" name="quantidade" required>
+                <label for="data-relatorio">Data para Relatório:</label>
+                <input type="date" id="data-relatorio" name="data-relatorio" required>
             </div>
-            <div class="info-box">
-                <label for="material-falta">Material em Falta:</label>
-                <input type="text" id="material-falta" name="material-falta" required>
-            </div>
-            <button type="button" onclick="exibirInformacoes()">Exibir Informações</button>
+            <button type="button" onclick="gerarExcel()">Gerar Relatório em Excel</button>
         </form>
-        <div id="resultado" class="resultado"></div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
