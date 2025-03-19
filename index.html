@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Materiais</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Controle de Materiais</h1>
+        <form id="materialForm">
+            <div class="info-box">
+                <label for="data-registro">Data do Registro:</label>
+                <input type="date" id="data-registro" name="data-registro" required>
+            </div>
+            <div class="info-box">
+                <label for="responsavel">Nome do Responsável:</label>
+                <input type="text" id="responsavel" name="responsavel" required>
+            </div>
+            <div class="info-box">
+                <label for="material">Nome do Material:</label>
+                <input type="text" id="material" name="material" required>
+            </div>
+            <div class="info-box">
+                <label for="data-relatorio">Data para Relatório:</label>
+                <input type="date" id="data-relatorio" name="data-relatorio" required>
+            </div>
+            <button type="button" onclick="gerarExcel()">Gerar Relatório em Excel</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
 
