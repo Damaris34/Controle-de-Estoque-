@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+    background: linear-gradient(135deg, #ff6f61, #ffcc5c);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,8 +21,9 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 30px;
-    color: #4a4a4a;
+    color: #ff0000;
     font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .form-row {
@@ -49,7 +50,7 @@ label {
     color: #555;
 }
 
-input {
+input, textarea {
     width: 100%;
     padding: 12px;
     box-sizing: border-box;
@@ -60,15 +61,15 @@ input {
     font-size: 16px;
 }
 
-input:focus {
-    border-color: #6a76f8;
+input:focus, textarea:focus {
+    border-color: #ff0000;
     outline: none;
 }
 
 button {
     width: 100%;
     padding: 15px;
-    background-color: #6a76f8;
+    background-color: #ff0000;
     color: #ffffff;
     border: none;
     border-radius: 7px;
@@ -80,5 +81,5 @@ button {
 }
 
 button:hover {
-    background-color: #5a64c0;
+    background-color: #cc0000;
 }
