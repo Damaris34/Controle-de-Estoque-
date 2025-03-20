@@ -57,7 +57,7 @@ main {
     color: #555;
 }
 
-.form-group input, .form-group select {
+.form-group input {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -113,15 +113,14 @@ table tr:nth-child(even) {
     color: #4CAF50;
 }
 
-/* Seção de Excel */
-.excel-section {
+/* Seção de PDF */
+.pdf-section {
     display: flex;
     justify-content: center;
-    gap: 10px;
 }
 
-#importarExcel, #exportarExcel {
-    width: 200px;
+#gerarRelatorio {
+    width: 250px;
     background-color: #007bff;
     padding: 12px;
     font-size: 1.2rem;
@@ -132,7 +131,7 @@ table tr:nth-child(even) {
     transition: background-color 0.3s;
 }
 
-#importarExcel:hover, #exportarExcel:hover {
+#gerarRelatorio:hover {
     background-color: #0056b3;
 }
 
