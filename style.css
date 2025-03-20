@@ -1,50 +1,35 @@
-/* Estilo geral para garantir espaçamento consistente */
-body {
-    padding: 30px; /* Aumenta o padding geral do corpo */
-}
-
-/* Estilo para o formulário */
-.form-section {
-    padding: 30px; /* Aumenta o padding interno do formulário */
-    margin-bottom: 40px; /* Aumenta o espaço abaixo do formulário */
-}
-
-.form-group {
-    margin-bottom: 20px; /* Aumenta o espaço entre os grupos de formulário */
-}
-
-.form-group label {
-    display: block; /* Garante que o label ocupe toda a largura disponível */
-    margin-bottom: 5px; /* Espaço entre o label e o campo de entrada */
-}
-
-/* Estilo para os botões */
-button {
-    margin-top: 20px; /* Aumenta o espaço acima dos botões */
-}
-
-/* Estilo para as seções de tabela */
-.table-section,
+/* Estilo para a seção de materiais em falta */
 .missing-section {
-    margin-top: 40px; /* Aumenta o espaço acima das seções de tabela */
+    margin-top: 30px;
 }
 
-.table-section table,
+.missing-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #e74c3c; /* Cor para destacar a importância */
+}
+
 .missing-section table {
-    margin-bottom: 20px; /* Espaço abaixo das tabelas */
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-/* Estilo para o botão de exportação */
-.export-section {
-    margin-top: 30px; /* Aumenta o espaço acima da seção de exportação */
+.missing-section table th,
+.missing-section table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
 }
 
-#exportarExcel {
-    width: 300px; /* Aumenta a largura do botão de exportação */
+.missing-section table th {
+    background-color: #e74c3c; /* Cor para destacar a importância */
+    color: white;
 }
 
-/* Estilo para o rodapé */
-footer {
-    margin-top: 50px; /* Aumenta o espaço acima do rodapé */
-    padding: 20px; /* Aumenta o padding interno do rodapé */
+.missing-section table tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
