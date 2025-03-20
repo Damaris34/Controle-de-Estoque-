@@ -11,26 +11,17 @@ function adicionarMaterial() {
     const quantidadeEntrada = document.getElementById('quantidadeEntrada').value;
     const dataSaida = document.getElementById('dataSaida').value || 'N/A';
     const quantidadeSaida = document.getElementById('quantidadeSaida').value || 'N/A';
-    const emFalta = document.getElementById('emFalta').checked;
+    const emFalta = document.getElementById('emFalta').checked ? 'Sim' : 'Não';
 
-    const tbodyEstoque = document.querySelector('#tabelaEstoque tbody');
-    const newRowEstoque = tbodyEstoque.insertRow();
+    const tbody = document.querySelector('#tabelaEstoque tbody');
+    const newRow = tbody.insertRow();
 
-    newRowEstoque.insertCell(0).textContent = dataEntrada;
-    newRowEstoque.insertCell(1).textContent = nomeMaterial;
-    newRowEstoque.insertCell(2).textContent = quantidadeEntrada;
-    newRowEstoque.insertCell(3).textContent = dataSaida;
-    newRowEstoque.insertCell(4).textContent = quantidadeSaida;
-    newRowEstoque.insertCell(5).textContent = emFalta ? 'Sim' : 'Não';
-
-    if (emFalta) {
-        const tbodyFalta = document.querySelector('#tabelaMateriaisEmFalta tbody');
-        const newRowFalta = tbodyFalta.insertRow();
-
-        newRowFalta.insertCell(0).textContent = nomeMaterial;
-        newRowFalta.insertCell(1).textContent = quantidadeEntrada;
-        newRowFalta.insertCell(2).textContent = quantidadeSaida;
-    }
+    newRow.insertCell(0).textContent = dataEntrada;
+    newRow.insertCell(1).textContent = nomeMaterial;
+    newRow.insertCell(2).textContent = quantidadeEntrada;
+    newRow.insertCell(3).textContent = dataSaida;
+    newRow.insertCell(4).textContent = quantidadeSaida;
+    newRow.insertCell(5).textContent = emFalta;
 
     document.getElementById('estoqueForm').reset();
 }
