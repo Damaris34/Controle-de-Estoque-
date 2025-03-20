@@ -113,14 +113,15 @@ table tr:nth-child(even) {
     color: #4CAF50;
 }
 
-/* Seção de PDF */
-.pdf-section {
+/* Seção de Excel */
+.excel-section {
     display: flex;
     justify-content: center;
+    gap: 10px;
 }
 
-#gerarRelatorio {
-    width: 250px;
+#importarExcel, #exportarExcel {
+    width: 200px;
     background-color: #007bff;
     padding: 12px;
     font-size: 1.2rem;
@@ -131,7 +132,7 @@ table tr:nth-child(even) {
     transition: background-color 0.3s;
 }
 
-#gerarRelatorio:hover {
+#importarExcel:hover, #exportarExcel:hover {
     background-color: #0056b3;
 }
 
