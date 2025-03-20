@@ -1,38 +1,133 @@
-/* Estilo para os campos de entrada de data */
-.form-group input[type="date"] {
-    width: calc(100% - 22px); /* Ajusta a largura para caber dentro do contêiner */
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+/* Estilo geral para garantir espaçamento consistente */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 30px;
 }
 
-/* Estilo para os campos de entrada de número */
-.form-group input[type="number"] {
-    width: calc(100% - 22px); /* Ajusta a largura para caber dentro do contêiner */
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para o checkbox de material em falta */
-.form-group input[type="checkbox"] {
-    width: auto;
-    margin-top: 5px;
+header h1 {
+    font-size: 2.5rem;
 }
 
-/* Estilo para o label do checkbox */
-.form-group label[for="emFalta"] {
+main {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Estilo do formulário */
+.form-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.form-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #4CAF50;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
     font-size: 1rem;
     color: #555;
-    display: flex;
-    align-items: center;
+    margin-bottom: 5px;
 }
 
-/* Estilo para o botão de exportação para Excel */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group input[type="checkbox"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Tabela */
+.table-section,
+.missing-section {
+    margin-top: 40px;
+}
+
+.table-section table,
+.missing-section table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-section h2,
+.missing-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #4CAF50;
+}
+
+/* Seção de exportação */
+.export-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 #exportarExcel {
     width: 250px;
     background-color: #28a745;
@@ -43,16 +138,17 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 20px;
 }
 
 #exportarExcel:hover {
     background-color: #218838;
 }
 
-/* Estilo para a seção de exportação */
-.export-section {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+/* Rodapé */
+footer {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 50px;
+    color: #555;
+    padding: 20px;
 }
