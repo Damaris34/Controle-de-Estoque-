@@ -1,59 +1,80 @@
 document.getElementById('movimentacaoForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    adicionarMovimentacao();
+    registrarMovimentacao();
 });
 
-document.getElementById('gerarRelatorio').addEventListener('click', gerarRelatorioMensal);
+document.getElementById('importarExcel').addEventListener('click', function() {
+    document.getElementById('fileInput').click();
+});
 
-function adicionarMovimentacao() {
-    const data = document.getElementById('data').value;
+document.getElementById('fileInput').addEventListener('change', importarExcel);
+
+document.getElementById('exportarExcel').addEventListener('click', exportarParaExcel);
+
+let estoque = [];
+
+function registrarMovimentacao() {
+    const dataRegistro = document.getElementById('dataRegistro').value;
     const nomeMaterial = document.getElementById('nomeMaterial').value;
-    const quantidade = document.getElementById('quantidade').value;
+    const quantidade = parseInt(document.getElementById('quantidade').value);
     const tipoMovimentacao = document.getElementById('tipoMovimentacao').value;
 
-    const tbody = document.querySelector('#tabelaEstoque tbody');
-    const newRow = tbody.insertRow();
+    const movimentacao = {
+        dataRegistro,
+        nomeMaterial,
+        quantidade,
+        tipoMovimentacao,
+        dataSaida: tipoMovimentacao === 'saida' ? dataRegistro : ''
+    };
 
-    newRow.insertCell(0).textContent = data;
-    newRow.insertCell(1).textContent = nomeMaterial;
-    newRow.insertCell(2).textContent = quantidade;
-    newRow.insertCell(3).textContent = tipoMovimentacao;
-
+    estoque.push(movimentacao);
+    atualizarTabela();
     document.getElementById('movimentacaoForm').reset();
 }
 
-function gerarRelatorioMensal() {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
+function atualizarTabela() {
+    const tbody = document.querySelector('#tabelaEstoque tbody');
+    tbody.innerHTML = '';
 
-    doc.setFontSize(16);
-    doc.text("Relatório Mensal de Estoque", 10, 10);
-
-    const dataAtual = new Date().toLocaleDateString();
-    doc.setFontSize(12);
-    doc.text(`Data de Geração: ${dataAtual}`, 10, 20);
-
-    const table = document.getElementById('tabelaEstoque');
-    const rows = table.rows;
-
-    let y = 30;
-    const headers = ["Data", "Nome do Material", "Quantidade", "Tipo"];
-
-    doc.setFontSize(12);
-    doc.setFont("bold");
-    headers.forEach((header, index) => {
-        doc.text(header, 10 + index * 45, y);
+    estoque.forEach(movimentacao => {
+        const newRow = tbody.insertRow();
+        newRow.insertCell(0).textContent = movimentacao.dataRegistro;
+        newRow.insertCell(1).textContent = movimentacao.nomeMaterial;
+        newRow.insertCell(2).textContent = movimentacao.quantidade;
+        newRow.insertCell(3).textContent = movimentacao.tipoMovimentacao;
+        newRow.insertCell(4).textContent = movimentacao.dataSaida;
     });
-    y += 10;
+}
 
-    doc.setFont("normal");
-    for (let i = 1; i < rows.length; i++) {
-        const cells = rows[i].cells;
-        cells.forEach((cell, index) => {
-            doc.text(cell.textContent, 10 + index * 45, y);
-        });
-        y += 10;
-    }
+function importarExcel(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
 
-    doc.save('relatorio_mensal_estoque.pdf');
+    reader.onload = function(e) {
+        const data = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(data, { type: 'array' });
+
+        const sheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[sheetName];
+        const json = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+        estoque = json.slice(1).map(row => ({
+            dataRegistro: row[0],
+            nomeMaterial: row[1],
+            quantidade: parseInt(row[2]),
+            tipoMovimentacao: row[3],
+            dataSaida: row[4]
+        }));
+
+        atualizarTabela();
+    };
+
+    reader.readAsArrayBuffer(file);
+}
+
+function exportarParaExcel() {
+    const ws = XLSX.utils.json_to_sheet(estoque, { header: ['Data de Registro', 'Nome do Material', 'Quantidade', 'Tipo', 'Data de Saída'] });
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Estoque');
+    XLSX.writeFile(wb, 'estoque.xlsx');
 }
