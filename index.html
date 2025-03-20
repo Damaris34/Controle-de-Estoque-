@@ -18,16 +18,28 @@
             <h2>Adicionar Material ao Estoque</h2>
             <form id="estoqueForm">
                 <div class="form-group">
-                    <label for="data">Data do Registro:</label>
-                    <input type="date" id="data" required>
+                    <label for="dataEntrada">Data de Entrada:</label>
+                    <input type="date" id="dataEntrada" required>
                 </div>
                 <div class="form-group">
                     <label for="nomeMaterial">Nome do Material:</label>
                     <input type="text" id="nomeMaterial" required>
                 </div>
                 <div class="form-group">
-                    <label for="dataRelatorio">Data para Relatório:</label>
-                    <input type="date" id="dataRelatorio" required>
+                    <label for="quantidadeEntrada">Quantidade de Entrada:</label>
+                    <input type="number" id="quantidadeEntrada" required>
+                </div>
+                <div class="form-group">
+                    <label for="dataSaida">Data de Saída:</label>
+                    <input type="date" id="dataSaida">
+                </div>
+                <div class="form-group">
+                    <label for="quantidadeSaida">Quantidade de Saída:</label>
+                    <input type="number" id="quantidadeSaida">
+                </div>
+                <div class="form-group">
+                    <label for="emFalta">Material em Falta:</label>
+                    <input type="checkbox" id="emFalta">
                 </div>
                 <button type="submit">Adicionar</button>
             </form>
@@ -38,9 +50,12 @@
             <table id="tabelaEstoque">
                 <thead>
                     <tr>
-                        <th>Data</th>
+                        <th>Data de Entrada</th>
                         <th>Nome do Material</th>
-                        <th>Data para Relatório</th>
+                        <th>Quantidade de Entrada</th>
+                        <th>Data de Saída</th>
+                        <th>Quantidade de Saída</th>
+                        <th>Em Falta</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,8 +64,8 @@
             </table>
         </section>
 
-        <section class="pdf-section">
-            <button id="gerarRelatorio">Gerar Relatório PDF</button>
+        <section class="export-section">
+            <button id="exportarExcel">Exportar para Excel</button>
         </section>
     </main>
 
@@ -58,7 +73,7 @@
         <p>&copy; 2025 Controle de Estoque | Desenvolvido por Você</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
