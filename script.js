@@ -3,8 +3,6 @@ document.getElementById('estoqueForm').addEventListener('submit', function(event
     adicionarMaterial();
 });
 
-document.getElementById('exportarExcel').addEventListener('click', exportarParaExcel);
-
 function adicionarMaterial() {
     const dataEntrada = document.getElementById('dataEntrada').value;
     const nomeMaterial = document.getElementById('nomeMaterial').value;
@@ -33,10 +31,4 @@ function adicionarMaterial() {
     }
 
     document.getElementById('estoqueForm').reset();
-}
-
-function exportarParaExcel() {
-    const table = document.getElementById('tabelaEstoque');
-    const wb = XLSX.utils.table_to_book(table);
-    XLSX.writeFile(wb, 'estoque.xlsx');
 }
