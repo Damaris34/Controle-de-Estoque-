@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Controle de Estoque</title>
+    <title>Controle de Estoque Mensal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <h1>Controle de Estoque</h1>
+            <h1>Controle de Estoque Mensal</h1>
         </div>
     </header>
 
     <main>
         <section class="form-section">
-            <h2>Adicionar Material ao Estoque</h2>
-            <form id="estoqueForm">
+            <h2>Adicionar Movimentação</h2>
+            <form id="movimentacaoForm">
                 <div class="form-group">
-                    <label for="data">Data do Registro:</label>
+                    <label for="data">Data:</label>
                     <input type="date" id="data" required>
                 </div>
                 <div class="form-group">
@@ -26,8 +26,15 @@
                     <input type="text" id="nomeMaterial" required>
                 </div>
                 <div class="form-group">
-                    <label for="dataRelatorio">Data para Relatório:</label>
-                    <input type="date" id="dataRelatorio" required>
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" id="quantidade" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipoMovimentacao">Tipo de Movimentação:</label>
+                    <select id="tipoMovimentacao" required>
+                        <option value="entrada">Entrada</option>
+                        <option value="saida">Saída</option>
+                    </select>
                 </div>
                 <button type="submit">Adicionar</button>
             </form>
@@ -40,7 +47,8 @@
                     <tr>
                         <th>Data</th>
                         <th>Nome do Material</th>
-                        <th>Data para Relatório</th>
+                        <th>Quantidade</th>
+                        <th>Tipo</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,7 +58,7 @@
         </section>
 
         <section class="pdf-section">
-            <button id="gerarRelatorio">Gerar Relatório PDF</button>
+            <button id="gerarRelatorio">Gerar Relatório Mensal</button>
         </section>
     </main>
 
