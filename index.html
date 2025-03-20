@@ -1,144 +1,75 @@
-/* Resetando estilo básico para garantir que todos os navegadores exibam da mesma forma */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1>Controle de Estoque</h1>
+        </div>
+    </header>
 
-/* Estilos gerais */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
-}
+    <main>
+        <section class="form-section">
+            <h2>Registrar Movimentação</h2>
+            <form id="movimentacaoForm">
+                <div class="form-group">
+                    <label for="dataRegistro">Data de Registro:</label>
+                    <input type="date" id="dataRegistro" required>
+                </div>
+                <div class="form-group">
+                    <label for="nomeMaterial">Nome do Material:</label>
+                    <input type="text" id="nomeMaterial" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" id="quantidade" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipoMovimentacao">Tipo de Movimentação:</label>
+                    <select id="tipoMovimentacao" required>
+                        <option value="entrada">Entrada</option>
+                        <option value="saida">Saída</option>
+                    </select>
+                </div>
+                <button type="submit">Registrar</button>
+            </form>
+        </section>
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        <section class="table-section">
+            <h2>Estoque Atual</h2>
+            <table id="tabelaEstoque">
+                <thead>
+                    <tr>
+                        <th>Data de Registro</th>
+                        <th>Nome do Material</th>
+                        <th>Quantidade</th>
+                        <th>Tipo</th>
+                        <th>Data de Saída</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados de estoque serão exibidos aqui -->
+                </tbody>
+            </table>
+        </section>
 
-header h1 {
-    font-size: 2.5rem;
-}
+        <section class="excel-section">
+            <button id="importarExcel">Importar Excel</button>
+            <button id="exportarExcel">Exportar para Excel</button>
+            <input type="file" id="fileInput" style="display:none;" accept=".xlsx">
+        </section>
+    </main>
 
-main {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
+    <footer>
+        <p>&copy; 2025 Controle de Estoque | Desenvolvido por Você</p>
+    </footer>
 
-/* Estilo do formulário */
-.form-section {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.form-section h2 {
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-    color: #4CAF50;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    font-size: 1rem;
-    color: #555;
-}
-
-.form-group input, .form-group select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-/* Tabela */
-.table-section table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-table th, table td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-table th {
-    background-color: #4CAF50;
-    color: white;
-}
-
-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.table-section h2 {
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-    color: #4CAF50;
-}
-
-/* Seção de PDF */
-.pdf-section {
-    display: flex;
-    justify-content: center;
-}
-
-#gerarRelatorio {
-    width: 250px;
-    background-color: #007bff;
-    padding: 12px;
-    font-size: 1.2rem;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#gerarRelatorio:hover {
-    background-color: #0056b3;
-}
-
-/* Rodapé */
-footer {
-    text-align: center;
-    font-size: 1rem;
-    margin-top: 40px;
-    color: #555;
-}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
