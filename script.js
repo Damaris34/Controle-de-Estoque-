@@ -1,3 +1,10 @@
+document.getElementById('estoqueForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    adicionarMaterial();
+});
+
+document.getElementById('exportarExcel').addEventListener('click', exportarParaExcel);
+
 function adicionarMaterial() {
     const dataEntrada = document.getElementById('dataEntrada').value;
     const nomeMaterial = document.getElementById('nomeMaterial').value;
@@ -5,7 +12,6 @@ function adicionarMaterial() {
     const dataSaida = document.getElementById('dataSaida').value || 'N/A';
     const quantidadeSaida = document.getElementById('quantidadeSaida').value || 'N/A';
     const emFalta = document.getElementById('emFalta').checked;
-    const descricaoFalta = document.getElementById('descricaoFalta').value;
 
     const tbodyEstoque = document.querySelector('#tabelaEstoque tbody');
     const newRowEstoque = tbodyEstoque.insertRow();
@@ -24,8 +30,13 @@ function adicionarMaterial() {
         newRowFalta.insertCell(0).textContent = nomeMaterial;
         newRowFalta.insertCell(1).textContent = quantidadeEntrada;
         newRowFalta.insertCell(2).textContent = quantidadeSaida;
-        newRowFalta.insertCell(3).textContent = descricaoFalta; // Adiciona a descrição
     }
 
     document.getElementById('estoqueForm').reset();
+}
+
+function exportarParaExcel() {
+    const table = document.getElementById('tabelaEstoque');
+    const wb = XLSX.utils.table_to_book(table);
+    XLSX.writeFile(wb, 'estoque.xlsx');
 }
