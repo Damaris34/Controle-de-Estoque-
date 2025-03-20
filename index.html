@@ -15,28 +15,21 @@
 
     <main>
         <section class="form-section">
-            <h2>Registrar Movimentação</h2>
-            <form id="movimentacaoForm">
+            <h2>Adicionar Material ao Estoque</h2>
+            <form id="estoqueForm">
                 <div class="form-group">
-                    <label for="dataRegistro">Data de Registro:</label>
-                    <input type="date" id="dataRegistro" required>
+                    <label for="data">Data do Registro:</label>
+                    <input type="date" id="data" required>
                 </div>
                 <div class="form-group">
                     <label for="nomeMaterial">Nome do Material:</label>
                     <input type="text" id="nomeMaterial" required>
                 </div>
                 <div class="form-group">
-                    <label for="quantidade">Quantidade:</label>
-                    <input type="number" id="quantidade" required>
+                    <label for="dataRelatorio">Data para Relatório:</label>
+                    <input type="date" id="dataRelatorio" required>
                 </div>
-                <div class="form-group">
-                    <label for="tipoMovimentacao">Tipo de Movimentação:</label>
-                    <select id="tipoMovimentacao" required>
-                        <option value="entrada">Entrada</option>
-                        <option value="saida">Saída</option>
-                    </select>
-                </div>
-                <button type="submit">Registrar</button>
+                <button type="submit">Adicionar</button>
             </form>
         </section>
 
@@ -45,11 +38,9 @@
             <table id="tabelaEstoque">
                 <thead>
                     <tr>
-                        <th>Data de Registro</th>
+                        <th>Data</th>
                         <th>Nome do Material</th>
-                        <th>Quantidade</th>
-                        <th>Tipo</th>
-                        <th>Data de Saída</th>
+                        <th>Data para Relatório</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,10 +49,8 @@
             </table>
         </section>
 
-        <section class="excel-section">
-            <button id="importarExcel">Importar Excel</button>
-            <button id="exportarExcel">Exportar para Excel</button>
-            <input type="file" id="fileInput" style="display:none;" accept=".xlsx">
+        <section class="pdf-section">
+            <button id="gerarRelatorio">Gerar Relatório PDF</button>
         </section>
     </main>
 
@@ -69,7 +58,7 @@
         <p>&copy; 2025 Controle de Estoque | Desenvolvido por Você</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
