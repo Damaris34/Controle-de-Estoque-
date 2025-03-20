@@ -1,64 +1,6 @@
-/* Resetando estilo básico para garantir que todos os navegadores exibam da mesma forma */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estilos gerais */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
-    padding: 20px;
-}
-
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    font-size: 2.5rem;
-}
-
-main {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-/* Estilo do formulário */
-.form-section {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.form-section h2 {
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-    color: #4CAF50;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    font-size: 1rem;
-    color: #555;
-}
-
-.form-group input {
-    width: 100%;
+/* Estilo para os campos de entrada de data */
+.form-group input[type="date"] {
+    width: calc(100% - 22px); /* Ajusta a largura para caber dentro do contêiner */
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
@@ -66,62 +8,34 @@ main {
     font-size: 1rem;
 }
 
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 1.1rem;
-    border: none;
+/* Estilo para os campos de entrada de número */
+.form-group input[type="number"] {
+    width: calc(100% - 22px); /* Ajusta a largura para caber dentro do contêiner */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 1rem;
 }
 
-button:hover {
-    background-color: #45a049;
+/* Estilo para o checkbox de material em falta */
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-top: 5px;
 }
 
-/* Tabela */
-.table-section table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-table th, table td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-table th {
-    background-color: #4CAF50;
-    color: white;
-}
-
-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.table-section h2 {
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-    color: #4CAF50;
-}
-
-/* Seção de PDF */
-.pdf-section {
+/* Estilo para o label do checkbox */
+.form-group label[for="emFalta"] {
+    font-size: 1rem;
+    color: #555;
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
-#gerarRelatorio {
+/* Estilo para o botão de exportação para Excel */
+#exportarExcel {
     width: 250px;
-    background-color: #007bff;
+    background-color: #28a745;
     padding: 12px;
     font-size: 1.2rem;
     color: white;
@@ -129,16 +43,16 @@ table tr:nth-child(even) {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 20px;
 }
 
-#gerarRelatorio:hover {
-    background-color: #0056b3;
+#exportarExcel:hover {
+    background-color: #218838;
 }
 
-/* Rodapé */
-footer {
-    text-align: center;
-    font-size: 1rem;
-    margin-top: 40px;
-    color: #555;
+/* Estilo para a seção de exportação */
+.export-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
