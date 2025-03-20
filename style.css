@@ -1,58 +1,35 @@
-/* Estilo para os campos de entrada de data */
-.form-group input[type="date"] {
-    width: calc(100% - 22px); /* Ajusta a largura para caber dentro do contêiner */
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+/* Estilo para a seção de materiais em falta */
+.missing-section {
+    margin-top: 30px;
 }
 
-/* Estilo para os campos de entrada de número */
-.form-group input[type="number"] {
-    width: calc(100% - 22px); /* Ajusta a largura para caber dentro do contêiner */
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+.missing-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #e74c3c; /* Cor para destacar a importância */
 }
 
-/* Estilo para o checkbox de material em falta */
-.form-group input[type="checkbox"] {
-    width: auto;
-    margin-top: 5px;
+.missing-section table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-/* Estilo para o label do checkbox */
-.form-group label[for="emFalta"] {
-    font-size: 1rem;
-    color: #555;
-    display: flex;
-    align-items: center;
-}
-
-/* Estilo para o botão de exportação para Excel */
-#exportarExcel {
-    width: 250px;
-    background-color: #28a745;
+.missing-section table th,
+.missing-section table td {
     padding: 12px;
-    font-size: 1.2rem;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.missing-section table th {
+    background-color: #e74c3c; /* Cor para destacar a importância */
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 20px;
 }
 
-#exportarExcel:hover {
-    background-color: #218838;
-}
-
-/* Estilo para a seção de exportação */
-.export-section {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+.missing-section table tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
