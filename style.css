@@ -57,7 +57,7 @@ main {
     color: #555;
 }
 
-.form-group input {
+.form-group input, .form-group select {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
