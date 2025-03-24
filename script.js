@@ -1,44 +1,20 @@
-document.getElementById('estoqueForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    adicionarMaterial();
-});
+function addStock() {
+    const entryDate = document.getElementById('entryDate').value;
+    const quantity = document.getElementById('quantity').value;
+    const exitDate = document.getElementById('exitDate').value;
+    const exitQuantity = document.getElementById('exitQuantity').value;
+    const material = document.getElementById('material').value;
 
-document.getElementById('exportarExcel').addEventListener('click', exportarParaExcel);
+    const table = document.getElementById('stockTable').getElementsByTagName('tbody')[0];
+    const newRow = table.insertRow();
 
-function adicionarMaterial() {
-    const dataEntrada = document.getElementById('dataEntrada').value;
-    const nomeMaterial = document.getElementById('nomeMaterial').value;
-    const quantidadeEntrada = document.getElementById('quantidadeEntrada').value;
-    const dataSaida = document.getElementById('dataSaida').value || 'N/A';
-    const quantidadeSaida = document.getElementById('quantidadeSaida').value || 'N/A';
-    const emFalta = document.getElementById('emFalta').checked;
-    const descricaoFalta = document.getElementById('descricaoFalta').value;
-
-    const tbodyEstoque = document.querySelector('#tabelaEstoque tbody');
-    const newRowEstoque = tbodyEstoque.insertRow();
-
-    newRowEstoque.insertCell(0).textContent = dataEntrada;
-    newRowEstoque.insertCell(1).textContent = nomeMaterial;
-    newRowEstoque.insertCell(2).textContent = quantidadeEntrada;
-    newRowEstoque.insertCell(3).textContent = dataSaida;
-    newRowEstoque.insertCell(4).textContent = quantidadeSaida;
-    newRowEstoque.insertCell(5).textContent = emFalta ? 'Sim' : 'Não';
-
-    if (emFalta) {
-        const tbodyFalta = document.querySelector('#tabelaMateriaisEmFalta tbody');
-        const newRowFalta = tbodyFalta.insertRow();
-
-        newRowFalta.insertCell(0).textContent = nomeMaterial;
-        newRowFalta.insertCell(1).textContent = quantidadeEntrada;
-        newRowFalta.insertCell(2).textContent = quantidadeSaida;
-        newRowFalta.insertCell(3).textContent = descricaoFalta; // Adiciona a descrição
-    }
-
-    document.getElementById('estoqueForm').reset();
+    newRow.insertCell(0).innerText = entryDate;
+    newRow.insertCell(1).innerText = quantity;
+    newRow.insertCell(2).innerText = exitDate;
+    newRow.insertCell(3).innerText = exitQuantity;
+    newRow.insertCell(4).innerText = material;
 }
 
-function exportarParaExcel() {
-    const table = document.getElementById('tabelaEstoque');
-    const wb = XLSX.utils.table_to_book(table);
-    XLSX.writeFile(wb, 'estoque.xlsx');
+function exportToEmail() {
+    alert('Funcionalidade de exportação para email não implementada.');
 }
