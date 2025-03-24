@@ -1,34 +1,95 @@
-<section class="form-section">
-    <h2>Registrar Novo Material</h2> <!-- Nome alterado aqui -->
-    <form id="estoqueForm">
-        <div class="form-group">
-            <label for="dataEntrada">Data de Entrada:</label>
-            <input type="date" id="dataEntrada" required>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1>Controle de Estoque</h1>
         </div>
-        <div class="form-group">
-            <label for="nomeMaterial">Nome do Material:</label>
-            <input type="text" id="nomeMaterial" required>
-        </div>
-        <div class="form-group">
-            <label for="quantidadeEntrada">Quantidade de Entrada:</label>
-            <input type="number" id="quantidadeEntrada" required>
-        </div>
-        <div class="form-group">
-            <label for="dataSaida">Data de Saída:</label>
-            <input type="date" id="dataSaida">
-        </div>
-        <div class="form-group">
-            <label for="quantidadeSaida">Quantidade de Saída:</label>
-            <input type="number" id="quantidadeSaida">
-        </div>
-        <div class="form-group">
-            <label for="emFalta">Material em Falta:</label>
-            <input type="checkbox" id="emFalta">
-        </div>
-        <div class="form-group">
-            <label for="descricaoFalta">Descrição do Material em Falta:</label>
-            <input type="text" id="descricaoFalta">
-        </div>
-        <button type="submit">Adicionar</button>
-    </form>
-</section>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Registrar Movimentação de Material</h2>
+            <form id="movimentacaoForm">
+                <div class="form-group">
+                    <label for="dataEntrada">Data de Entrada:</label>
+                    <input type="date" id="dataEntrada" required>
+                </div>
+                <div class="form-group">
+                    <label for="nomeMaterial">Nome do Material:</label>
+                    <input type="text" id="nomeMaterial" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantidadeEntrada">Quantidade de Entrada:</label>
+                    <input type="number" id="quantidadeEntrada" required>
+                </div>
+                <div class="form-group">
+                    <label for="dataSaida">Data de Saída:</label>
+                    <input type="date" id="dataSaida">
+                </div>
+                <div class="form-group">
+                    <label for="quantidadeSaida">Quantidade de Saída:</label>
+                    <input type="number" id="quantidadeSaida">
+                </div>
+                <div class="form-group">
+                    <label for="emFalta">Material em Falta:</label>
+                    <input type="checkbox" id="emFalta">
+                </div>
+                <div class="form-group">
+                    <label for="descricaoFalta">Descrição do Material em Falta:</label>
+                    <input type="text" id="descricaoFalta">
+                </div>
+                <button type="submit">Adicionar</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h2>Estoque Atual</h2>
+            <table id="tabelaEstoque">
+                <thead>
+                    <tr>
+                        <th>Nome do Material</th>
+                        <th>Quantidade Disponível</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados de estoque serão exibidos aqui -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="missing-section">
+            <h2>Materiais em Falta</h2>
+            <table id="tabelaFaltantes">
+                <thead>
+                    <tr>
+                        <th>Nome do Material</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Materiais em falta serão exibidos aqui -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="export-section">
+            <button id="exportarExcel">Exportar para Excel</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Controle de Estoque | Desenvolvido por Você</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
