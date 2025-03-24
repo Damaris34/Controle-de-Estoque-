@@ -1,73 +1,63 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-h1 {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-.add-material, .current-stock {
-    background: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-form input {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-}
-
-th {
-    background-color: #4CAF50;
-    color: white;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Controle de Estoque</h1>
+        </header>
+        <main>
+            <section class="add-material">
+                <h2>Adicionar Material ao Estoque</h2>
+                <form id="stockForm">
+                    <div class="form-group">
+                        <label for="entryDate">Data de Entrada:</label>
+                        <input type="date" id="entryDate" name="entryDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantidade em Entrada:</label>
+                        <input type="number" id="quantity" name="quantity">
+                    </div>
+                    <div class="form-group">
+                        <label for="exitDate">Data de Saída:</label>
+                        <input type="date" id="exitDate" name="exitDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="exitQuantity">Quantidade de Saída:</label>
+                        <input type="number" id="exitQuantity" name="exitQuantity">
+                    </div>
+                    <div class="form-group">
+                        <label for="material">Material em Falta:</label>
+                        <input type="text" id="material" name="material">
+                    </div>
+                    <button type="button" onclick="addStock()">Adicionar</button>
+                </form>
+            </section>
+            <section class="current-stock">
+                <h2>Estoque Atual</h2>
+                <table id="stockTable">
+                    <thead>
+                        <tr>
+                            <th>Data de Entrada</th>
+                            <th>Quantidade em Entrada</th>
+                            <th>Data de Saída</th>
+                            <th>Quantidade de Saída</th>
+                            <th>Material em Falta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dados do estoque serão inseridos aqui -->
+                    </tbody>
+                </table>
+                <button onclick="exportToEmail()">Exportar para Email</button>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
