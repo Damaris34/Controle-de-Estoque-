@@ -1,23 +1,70 @@
-<div class="container">
-    <header>
-        <h1>Controle de Estoque</h1>
-    </header>
-    <main>
-        <section class="form-section">
-            <h2>Adicionar Material ao Estoque</h2>
-            <form id="stockForm">
-                <!-- Campos do formulário -->
-            </form>
-        </section>
-        <section class="table-section">
-            <h2>Estoque Atual</h2>
-            <div class="table-container">
-                <table id="stockTable">
-                    <!-- Tabela de estoque -->
-                </table>
-            </div>
-            <button onclick="exportToEmail()">Exportar para Email</button>
-        </section>
-    </main>
-</div>
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Controle de Estoque</h1>
+        </header>
+        <main>
+            <section class="form-section">
+                <h2>Adicionar Material ao Estoque</h2>
+                <form id="stockForm">
+                    <div class="form-group">
+                        <label for="entryDate">Data de Entrada:</label>
+                        <input type="date" id="entryDate" name="entryDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantidade em Entrada:</label>
+                        <input type="number" id="quantity" name="quantity">
+                    </div>
+                    <div class="form-group">
+                        <label for="exitDate">Data de Saída:</label>
+                        <input type="date" id="exitDate" name="exitDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="exitQuantity">Quantidade de Saída:</label>
+                        <input type="number" id="exitQuantity" name="exitQuantity">
+                    </div>
+                    <div class="form-group">
+                        <label for="material">Material em Falta:</label>
+                        <input type="text" id="material" name="material">
+                    </div>
+                    <button type="button" onclick="addStock()">Adicionar</button>
+                </form>
+            </section>
+            <section class="table-section">
+                <h2>Estoque Atual</h2>
+                <div class="table-container">
+                    <table id="stockTable">
+                        <thead>
+                            <tr>
+                                <th>Data de Entrada</th>
+                                <th>Quantidade em Entrada</th>
+                                <th>Data de Saída</th>
+                                <th>Quantidade de Saída</th>
+                                <th>Material em Falta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dados do estoque serão inseridos aqui -->
+                        </tbody>
+                    </table>
+                </div>
+                <button onclick="exportToEmail()">Exportar para Email</button>
+            </section>
+            <section class="response-section">
+                <h2>Resposta</h2>
+                <textarea id="responseText" placeholder="Digite sua resposta aqui..."></textarea>
+                <button onclick="submitResponse()">Enviar Resposta</button>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
