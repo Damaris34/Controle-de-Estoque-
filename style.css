@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    background-color: #f8f9fa;
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,29 +10,52 @@ body {
 }
 
 .container {
-    width: 80%;
-    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
     background: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
-h1, h2 {
-    color: #333;
+h1 {
+    color: #007BFF;
     text-align: center;
-}
-
-.section {
     margin-bottom: 20px;
 }
 
-form {
+.form-container, .table-container {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+    background-color: #e2e6ea;
+}
+
+.table-container {
+    background-color: #f8f9fa;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.form-row {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .form-group {
+    flex: 1 1 calc(25% - 20px);
     margin-bottom: 15px;
 }
 
@@ -40,6 +63,7 @@ label {
     margin-bottom: 5px;
     font-weight: bold;
     color: #555;
+    display: block;
 }
 
 input, textarea {
@@ -59,6 +83,7 @@ button {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
+    align-self: flex-end;
 }
 
 button:hover {
@@ -78,8 +103,8 @@ th, td {
 }
 
 th {
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: #007BFF;
+    color: #fff;
 }
 
 tr:nth-child(even) {
