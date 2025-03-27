@@ -66,3 +66,27 @@ function carregarDados() {
         });
     }
 }
+
+function gerarPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const table = document.getElementById('estoqueTable');
+    const rows = table.getElementsByTagName('tr');
+
+    let y = 10;
+    doc.text("Controle de Estoque", 10, y);
+    y += 10;
+
+    for (let row of rows) {
+        const cells = row.getElementsByTagName('td');
+        let text = '';
+        for (let cell of cells) {
+            const input = cell.getElementsByTagName('input')[0] || cell.getElementsByTagName('select')[0];
+            text += input ? input.value + ' | ' : cell.innerText + ' | ';
+        }
+        doc.text(text, 10, y);
+        y += 10;
+    }
+
+    doc.save('controle_de_estoque.pdf');
+}
