@@ -7,28 +7,34 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Controle de Estoque</h1>
-    <div class="controls">
-        <label for="dataRegistro">Data de Registro:</label>
-        <input type="date" id="dataRegistro">
-        <button onclick="adicionarLinha()">Adicionar Material</button>
-    </div>
-    <table id="estoqueTable">
-        <thead>
-            <tr>
-                <th>Data de Registro</th>
-                <th>Nome do Material</th>
-                <th>Quantidade Retirada no Dia</th>
-                <th>Material em Falta</th>
-                <th>Quantidade para Repor</th>
-                <th>Último Material Recebido</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Linhas de dados serão adicionadas dinamicamente -->
-        </tbody>
-    </table>
+    <header>
+        <h1>Controle de Estoque</h1>
+        <div class="controls">
+            <label for="dataRegistro">Data de Registro:</label>
+            <input type="date" id="dataRegistro">
+            <button onclick="adicionarLinha()">Adicionar Material</button>
+            <button onclick="salvarDados()">Salvar Dados</button>
+            <button onclick="carregarDados()">Carregar Dados</button>
+        </div>
+    </header>
+    <main>
+        <table id="estoqueTable">
+            <thead>
+                <tr>
+                    <th>Data de Registro</th>
+                    <th>Nome do Material</th>
+                    <th>Quantidade Retirada no Dia</th>
+                    <th>Material em Falta</th>
+                    <th>Quantidade para Repor</th>
+                    <th>Último Material Recebido</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linhas de dados serão adicionadas dinamicamente -->
+            </tbody>
+        </table>
+    </main>
     <script src="scripts.js"></script>
 </body>
 </html>
