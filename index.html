@@ -12,7 +12,7 @@
             <h1>Controle de Estoque</h1>
         </header>
         <main>
-            <section class="add-material">
+            <section class="form-section">
                 <h2>Adicionar Material ao Estoque</h2>
                 <form id="stockForm">
                     <div class="form-group">
@@ -38,22 +38,24 @@
                     <button type="button" onclick="addStock()">Adicionar</button>
                 </form>
             </section>
-            <section class="current-stock">
+            <section class="table-section">
                 <h2>Estoque Atual</h2>
-                <table id="stockTable">
-                    <thead>
-                        <tr>
-                            <th>Data de Entrada</th>
-                            <th>Quantidade em Entrada</th>
-                            <th>Data de Saída</th>
-                            <th>Quantidade de Saída</th>
-                            <th>Material em Falta</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Dados do estoque serão inseridos aqui -->
-                    </tbody>
-                </table>
+                <div class="table-container">
+                    <table id="stockTable">
+                        <thead>
+                            <tr>
+                                <th>Data de Entrada</th>
+                                <th>Quantidade em Entrada</th>
+                                <th>Data de Saída</th>
+                                <th>Quantidade de Saída</th>
+                                <th>Material em Falta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dados do estoque serão inseridos aqui -->
+                        </tbody>
+                    </table>
+                </div>
                 <button onclick="exportToEmail()">Exportar para Email</button>
             </section>
         </main>
@@ -61,4 +63,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
