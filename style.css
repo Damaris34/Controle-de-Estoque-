@@ -34,7 +34,7 @@ h1 {
 }
 
 .form-container {
-    background-color: #e2e6ea;
+    background-color: #e9ecef;
 }
 
 .table-container {
@@ -95,6 +95,7 @@ button:hover {
     color: #fff;
     padding: 10px;
     border-radius: 4px 4px 0 0;
+    font-weight: bold;
 }
 
 .table-body {
