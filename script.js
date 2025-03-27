@@ -1,4 +1,3 @@
-// Função para adicionar um novo item ao estoque
 function addStock() {
     const entryDate = document.getElementById('entryDate').value;
     const quantity = document.getElementById('quantity').value;
@@ -6,13 +5,11 @@ function addStock() {
     const exitQuantity = document.getElementById('exitQuantity').value;
     const material = document.getElementById('material').value;
 
-    // Validação de entrada
     if (!validateInputs(entryDate, quantity, exitDate, exitQuantity, material)) {
         alert('Por favor, preencha todos os campos.');
         return;
     }
 
-    // Adiciona uma nova linha à tabela
     const table = document.getElementById('stockTable').getElementsByTagName('tbody')[0];
     const newRow = table.insertRow();
 
@@ -22,17 +19,14 @@ function addStock() {
     newRow.insertCell(3).innerText = exitQuantity;
     newRow.insertCell(4).innerText = material;
 
-    // Limpa o formulário
     clearForm();
 
-    // Feedback visual
     newRow.style.backgroundColor = '#d4edda';
     setTimeout(() => {
         newRow.style.backgroundColor = '';
     }, 1000);
 }
 
-// Função para exportar dados para um arquivo CSV
 function exportToEmail() {
     const table = document.getElementById('stockTable');
     const rows = table.getElementsByTagName('tr');
@@ -47,23 +41,29 @@ function exportToEmail() {
         csvContent += rowData.join(',') + "\n";
     }
 
-    // Cria um link para download do CSV
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", "data:text/csv;charset=utf-8," + encodedUri);
     link.setAttribute("download", "estoque.csv");
-    document.body.appendChild(link); // Necessário para Firefox
+    document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 }
 
-// Função para validar as entradas do formulário
 function validateInputs(entryDate, quantity, exitDate, exitQuantity, material) {
     return entryDate && quantity && exitDate && exitQuantity && material;
 }
 
-// Função para limpar o formulário
 function clearForm() {
     document.getElementById('stockForm').reset();
 }
 
+function submitResponse() {
+    const response = document.getElementById('responseText').value;
+    if (response) {
+        alert('Resposta enviada: ' + response);
+        document.getElementById('responseText').value = '';
+    } else {
+        alert('Por favor, digite uma resposta.');
+    }
+}
