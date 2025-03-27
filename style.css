@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e9ecef;
+    background-color: #f0f8ff;
     margin: 0;
     padding: 0;
     display: flex;
@@ -19,7 +19,7 @@ body {
 }
 
 header {
-    background-color: #007bff;
+    background-color: #4CAF50;
     color: white;
     padding: 20px;
     text-align: center;
@@ -31,7 +31,7 @@ main {
 }
 
 .add-material, .current-stock {
-    background: #f8f9fa;
+    background: #e0f7fa;
     padding: 20px;
     margin: 20px 0;
     border-radius: 8px;
@@ -46,18 +46,18 @@ main {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #343a40;
+    color: #263238;
 }
 
 .form-group input {
     width: calc(100% - 22px);
     padding: 10px;
-    border: 1px solid #ced4da;
+    border: 1px solid #b0bec5;
     border-radius: 4px;
 }
 
 button {
-    background-color: #007bff;
+    background-color: #00796b;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -67,7 +67,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #004d40;
 }
 
 table {
@@ -78,7 +78,7 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #dee2e6;
+    border: 1px solid #b0bec5;
 }
 
 th, td {
@@ -87,6 +87,6 @@ th, td {
 }
 
 th {
-    background-color: #007bff;
+    background-color: #00796b;
     color: white;
 }
