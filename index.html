@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Controle de Estoque</h1>
+    <table id="estoqueTable">
+        <thead>
+            <tr>
+                <th>Data de Registro</th>
+                <th>Nome do Material</th>
+                <th>Quantidade Retirada no Dia</th>
+                <th>Material em Falta</th>
+                <th>Quantidade para Repor</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Linhas de dados serão adicionadas dinamicamente -->
+        </tbody>
+    </table>
+    <button onclick="adicionarLinha()">Adicionar Material</button>
+    <script src="scripts.js"></script>
+</body>
+</html>
 
