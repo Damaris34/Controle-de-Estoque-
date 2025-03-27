@@ -23,50 +23,6 @@ function removerLinha(button) {
     row.parentNode.removeChild(row);
 }
 
-function salvarDados() {
-    const table = document.getElementById('estoqueTable').getElementsByTagName('tbody')[0];
-    const rows = table.getElementsByTagName('tr');
-    const data = [];
-
-    for (let row of rows) {
-        const cells = row.getElementsByTagName('td');
-        const rowData = [];
-        for (let cell of cells) {
-            const input = cell.getElementsByTagName('input')[0] || cell.getElementsByTagName('select')[0];
-            rowData.push(input ? input.value : cell.innerText);
-        }
-        data.push(rowData);
-    }
-
-    localStorage.setItem('estoqueData', JSON.stringify(data));
-    alert('Dados salvos com sucesso!');
-}
-
-function carregarDados() {
-    const data = JSON.parse(localStorage.getItem('estoqueData'));
-    if (data) {
-        const table = document.getElementById('estoqueTable').getElementsByTagName('tbody')[0];
-        table.innerHTML = '';
-
-        data.forEach(rowData => {
-            const newRow = table.insertRow();
-            rowData.forEach((cellData, index) => {
-                let cellContent;
-                if (index === 3) {
-                    cellContent = `<select><option value="Sim">Sim</option><option value="Não">Não</option></select>`;
-                    newRow.insertCell().innerHTML = cellContent;
-                    newRow.cells[index].getElementsByTagName('select')[0].value = cellData;
-                } else if (index === 6) {
-                    newRow.insertCell().innerHTML = `<button onclick="removerLinha(this)">Remover</button>`;
-                } else {
-                    cellContent = `<input type="text" value="${cellData}">`;
-                    newRow.insertCell().innerHTML = cellContent;
-                }
-            });
-        });
-    }
-}
-
 function gerarPDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
