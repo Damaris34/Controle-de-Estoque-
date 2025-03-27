@@ -32,7 +32,7 @@ main {
     align-items: center;
 }
 
-.form-section, .table-section {
+.form-section, .table-section, .response-section {
     background: #e0f7fa;
     padding: 20px;
     margin: 20px 0;
@@ -52,7 +52,7 @@ main {
     color: #263238;
 }
 
-.form-group input {
+.form-group input, textarea {
     width: calc(100% - 22px);
     padding: 10px;
     border: 1px solid #b0bec5;
@@ -101,4 +101,3 @@ th {
     top: 0;
     z-index: 1;
 }
-
