@@ -90,23 +90,16 @@ button:hover {
     background-color: #0056b3;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    padding: 12px;
-    border: 1px solid #ccc;
-    text-align: left;
-}
-
-th {
+.table-header {
     background-color: #007BFF;
     color: #fff;
+    padding: 10px;
+    border-radius: 4px 4px 0 0;
 }
 
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+.table-body {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0 0 4px 4px;
+    padding: 10px;
 }
