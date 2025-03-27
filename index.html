@@ -8,33 +8,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Controle de Estoque</h1>
-        <div class="controls">
-            <label for="dataRegistro">Data de Registro:</label>
-            <input type="date" id="dataRegistro">
-            <button onclick="adicionarLinha()">Adicionar Material</button>
-            <button onclick="gerarPDF()">Gerar PDF</button>
-        </div>
-    </header>
-    <main>
-        <table id="estoqueTable">
-            <thead>
-                <tr>
-                    <th>Data de Registro</th>
-                    <th>Nome do Material</th>
-                    <th>Quantidade Retirada no Dia</th>
-                    <th>Material em Falta</th>
-                    <th>Quantidade para Repor</th>
-                    <th>Último Material Recebido</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Linhas de dados serão adicionadas dinamicamente -->
-            </tbody>
-        </table>
-    </main>
+    <div class="container">
+        <header>
+            <h1>Controle de Estoque</h1>
+            <div class="controls">
+                <label for="dataRegistro">Data de Registro:</label>
+                <input type="date" id="dataRegistro">
+                <button onclick="adicionarLinha()">Adicionar Material</button>
+                <button onclick="gerarPDF()">Gerar PDF</button>
+            </div>
+        </header>
+        <main>
+            <table id="estoqueTable">
+                <thead>
+                    <tr>
+                        <th>Data de Registro</th>
+                        <th>Nome do Material</th>
+                        <th>Quantidade Retirada no Dia</th>
+                        <th>Material em Falta</th>
+                        <th>Quantidade para Repor</th>
+                        <th>Último Material Recebido</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas de dados serão adicionadas dinamicamente -->
+                </tbody>
+            </table>
+        </main>
+    </div>
     <script src="scripts.js"></script>
 </body>
 </html>
