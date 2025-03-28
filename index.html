@@ -5,38 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Estoque</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Controle de Estoque</h1>
-            <div class="controls">
-                <label for="dataRegistro">Data de Registro:</label>
-                <input type="date" id="dataRegistro">
-                <button onclick="adicionarLinha()">Adicionar Material</button>
-                <button onclick="gerarPDF()">Gerar PDF</button>
-            </div>
-        </header>
-        <main>
-            <table id="estoqueTable">
-                <thead>
-                    <tr>
-                        <th>Data de Registro</th>
-                        <th>Nome do Material</th>
-                        <th>Quantidade Retirada no Dia</th>
-                        <th>Material em Falta</th>
-                        <th>Quantidade para Repor</th>
-                        <th>Último Material Recebido</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Linhas de dados serão adicionadas dinamicamente -->
-                </tbody>
-            </table>
-        </main>
+        <h1>Controle de Estoque</h1>
+        <form id="estoqueForm">
+            <label for="dataRegistro">Data de Registro:</label>
+            <input type="date" id="dataRegistro" name="dataRegistro" required>
+
+            <label for="nomeMaterial">Nome do Material:</label>
+            <input type="text" id="nomeMaterial" name="nomeMaterial" required>
+
+            <label for="quantidade">Quantidade que saiu:</label>
+            <input type="number" id="quantidade" name="quantidade" required>
+
+            <button type="button" onclick="adicionarRegistro()">Adicionar Registro</button>
+        </form>
+
+        <h2>Registros de Estoque</h2>
+        <table id="estoqueTable">
+            <thead>
+                <tr>
+                    <th>Data de Registro</th>
+                    <th>Nome do Material</th>
+                    <th>Quantidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Registros serão adicionados aqui -->
+            </tbody>
+        </table>
+
+        <button onclick="gerarPDF()">Gerar PDF</button>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
