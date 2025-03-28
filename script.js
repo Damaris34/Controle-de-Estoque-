@@ -35,4 +35,3 @@ class StockData {
 
     // Getters e Setters
 }
-
