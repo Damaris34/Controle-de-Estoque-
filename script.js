@@ -1,32 +1,37 @@
-const { jsPDF } = window.jspdf;
+document.getElementById('stockForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Aqui você pode adicionar a lógica para enviar os dados para o servidor Java
+    alert('Dados registrados com sucesso!');
+});
 
-function adicionarRegistro() {
-    const dataRegistro = document.getElementById('dataRegistro').value;
-    const nomeMaterial = document.getElementById('nomeMaterial').value;
-    const quantidade = document.getElementById('quantidade').value;
+document.getElementById('exportPdf').addEventListener('click', function() {
+    // Aqui você pode adicionar a lógica para exportar os dados para PDF
+    alert('Exportação para PDF iniciada!');
+});
+import org.springframework.web.bind.annotation.*;
 
-    if (!dataRegistro || !nomeMaterial || !quantidade) {
-        alert('Por favor, preencha todos os campos.');
-        return;
+@RestController
+@RequestMapping("/api/stock")
+public class StockController {
+
+    @PostMapping("/register")
+    public String registerStock(@RequestBody StockData stockData) {
+        // Lógica para registrar o estoque
+        return "Estoque registrado com sucesso!";
     }
 
-    const tbody = document.querySelector('#estoqueTable tbody');
-    const newRow = tbody.insertRow();
-
-    const cellData = newRow.insertCell();
-    const cellNome = newRow.insertCell();
-    const cellQuantidade = newRow.insertCell();
-
-    cellData.textContent = dataRegistro;
-    cellNome.textContent = nomeMaterial;
-    cellQuantidade.textContent = quantidade;
-
-    // Limpar o formulário após adicionar o registro
-    document.getElementById('estoqueForm').reset();
+    @GetMapping("/exportPdf")
+    public void exportPdf() {
+        // Lógica para exportar para PDF usando iText ou Apache PDFBox
+    }
 }
 
-function gerarPDF() {
-    const doc = new jsPDF();
-    doc.autoTable({ html: '#estoqueTable' });
-    doc.save('controle_estoque.pdf');
+class StockData {
+    private String registrationDate;
+    private String materialName;
+    private int quantityUsed;
+    private String missingMaterial;
+    private int purchaseQuantity;
+
+    // Getters e Setters
 }
