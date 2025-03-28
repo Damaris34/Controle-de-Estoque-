@@ -6,6 +6,11 @@ document.getElementById('stockForm').addEventListener('submit', function(event) 
     const quantidadeMaterial = document.getElementById('quantidadeMaterial').value;
     const materialFalta = document.getElementById('materialFalta').value;
 
+    if (nomeMaterial.trim() === '' || quantidadeMaterial <= 0) {
+        alert('Por favor, preencha todos os campos corretamente.');
+        return;
+    }
+
     const table = document.getElementById('stockTable').getElementsByTagName('tbody')[0];
     const newRow = table.insertRow();
 
