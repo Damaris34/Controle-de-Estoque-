@@ -1,48 +1,26 @@
-function adicionarLinha() {
+const { jsPDF } = window.jspdf;
+
+function adicionarRegistro() {
     const dataRegistro = document.getElementById('dataRegistro').value;
-    const table = document.getElementById('estoqueTable').getElementsByTagName('tbody')[0];
-    const newRow = table.insertRow();
+    const nomeMaterial = document.getElementById('nomeMaterial').value;
+    const quantidade = document.getElementById('quantidade').value;
 
-    const cells = [
-        `<td>${dataRegistro}</td>`,
-        `<td><input type="text"></td>`,
-        `<td><input type="number"></td>`,
-        `<td><select><option value="Sim">Sim</option><option value="Não">Não</option></select></td>`,
-        `<td><input type="number"></td>`,
-        `<td><input type="text"></td>`,
-        `<td><button onclick="removerLinha(this)">Remover</button></td>`
-    ];
+    const tbody = document.querySelector('#estoqueTable tbody');
+    const newRow = tbody.insertRow();
 
-    cells.forEach(cell => {
-        newRow.insertCell().innerHTML = cell;
-    });
-}
+    const cellData = newRow.insertCell();
+    const cellNome = newRow.insertCell();
+    const cellQuantidade = newRow.insertCell();
 
-function removerLinha(button) {
-    const row = button.parentNode.parentNode;
-    row.parentNode.removeChild(row);
+    cellData.textContent = dataRegistro;
+    cellNome.textContent = nomeMaterial;
+    cellQuantidade.textContent = quantidade;
 }
 
 function gerarPDF() {
-    const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
     const table = document.getElementById('estoqueTable');
-    const rows = table.getElementsByTagName('tr');
 
-    let y = 10;
-    doc.text("Controle de Estoque", 10, y);
-    y += 10;
-
-    for (let row of rows) {
-        const cells = row.getElementsByTagName('td');
-        let text = '';
-        for (let cell of cells) {
-            const input = cell.getElementsByTagName('input')[0] || cell.getElementsByTagName('select')[0];
-            text += input ? input.value + ' | ' : cell.innerText + ' | ';
-        }
-        doc.text(text, 10, y);
-        y += 10;
-    }
-
-    doc.save('controle_de_estoque.pdf');
+    doc.autoTable({ html: '#estoqueTable' });
+    doc.save('controle_estoque.pdf');
 }
