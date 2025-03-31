@@ -8,31 +8,48 @@
 </head>
 <body>
     <div class="container">
-        <h1>Controle de Estoque</h1>
-        <form id="stockForm">
-            <label for="data">Data (dd/mm/aaaa):</label>
-            <input type="text" id="data" name="data" placeholder="dd/mm/aaaa">
+        <header>
+            <h1>Controle de Estoque</h1>
+        </header>
+        <main>
+            <section class="add-material">
+                <h2>Adicionar Material ao Estoque</h2>
+                <form id="stockForm">
+                    <label for="data">Data (dd/mm/aaaa):</label>
+                    <input type="text" id="data" name="data" placeholder="dd/mm/aaaa">
 
-            <label for="responsavel">Responsável:</label>
-            <input type="text" id="responsavel" name="responsavel">
+                    <label for="responsavel">Responsável:</label>
+                    <input type="text" id="responsavel" name="responsavel">
 
-            <label for="material">Nome do Material:</label>
-            <input type="text" id="material" name="material">
+                    <label for="material">Nome do Material:</label>
+                    <input type="text" id="material" name="material">
 
-            <label for="quantidade">Quantidade:</label>
-            <input type="number" id="quantidade" name="quantidade">
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" id="quantidade" name="quantidade">
 
-            <label for="dataRecebimento">Data de Recebimento (dd/mm/aaaa):</label>
-            <input type="text" id="dataRecebimento" name="dataRecebimento" placeholder="dd/mm/aaaa">
+                    <label for="dataRecebimento">Data de Recebimento (dd/mm/aaaa):</label>
+                    <input type="text" id="dataRecebimento" name="dataRecebimento" placeholder="dd/mm/aaaa">
 
-            <button type="button" onclick="registrar()">Registrar</button>
-            <button type="button" onclick="gerarPDF()">Gerar PDF</button>
-        </form>
+                    <button type="button" onclick="registrar()">Adicionar</button>
+                </form>
+            </section>
 
-        <h2>Estoque Atual</h2>
-        <div id="estoqueAtual">
-            <!-- Aqui será exibida a tabela de estoque atual -->
-        </div>
+            <section class="current-stock">
+                <h2>Estoque Atual</h2>
+                <div class="stock-controls">
+                    <button>Tabela de Estoque</button>
+                    <button>Novo Material</button>
+                    <button>Quantidade de Estoque</button>
+                    <button>DMM de Estoque</button>
+                    <button>Duplicar de Estoque</button>
+                    <button>Em Caixa</button>
+                </div>
+                <div id="estoqueAtual">
+                    <!-- Aqui será exibida a tabela de estoque atual -->
+                    <p>Exibição da tabela de estoque</p>
+                </div>
+            </section>
+        </main>
     </div>
     <script src="script.js"></script>
 </body>
