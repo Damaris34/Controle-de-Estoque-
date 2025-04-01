@@ -8,29 +8,32 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Controle de Estoque</h1>
-        </header>
-        <main>
-            <section class="stock-form">
-                <h2>Registro de Material</h2>
-                <form id="stockForm">
-                    <label for="dataRegistro">Data de Registro (dd/mm/aaaa):</label>
-                    <input type="text" id="dataRegistro" name="dataRegistro" placeholder="dd/mm/aaaa">
-
-                    <label for="nomeMaterial">Nome do Material:</label>
-                    <input type="text" id="nomeMaterial" name="nomeMaterial">
-
-                    <label for="materialFalta">Material em Falta:</label>
-                    <input type="text" id="materialFalta" name="materialFalta">
-
-                    <label for="quantidadeFalta">Quantidade em Falta:</label>
-                    <input type="number" id="quantidadeFalta" name="quantidadeFalta">
-
-                    <button type="button" onclick="gerarPDF()">Gerar PDF</button>
-                </form>
-            </section>
-        </main>
+        <h1>Controle de Estoque</h1>
+        <table id="estoqueTable">
+            <thead>
+                <tr>
+                    <th>Data de Registro</th>
+                    <th>Material de Saída</th>
+                    <th>Quantidade</th>
+                    <th>Descrição do Produto em Falta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2023-10-01</td>
+                    <td>Parafusos</td>
+                    <td>100</td>
+                    <td>Parafusos de aço inoxidável</td>
+                </tr>
+                <tr>
+                    <td>2023-10-02</td>
+                    <td>Porcas</td>
+                    <td>50</td>
+                    <td>Porcas de aço inoxidável</td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="gerarPDF">Gerar PDF</button>
     </div>
     <script src="script.js"></script>
 </body>
