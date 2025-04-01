@@ -1,32 +1,24 @@
-function gerarPDF() {
-    // Obter valores do formulário
-    const dataRegistro = document.getElementById('dataRegistro').value;
-    const nomeMaterial = document.getElementById('nomeMaterial').value;
-    const materialFalta = document.getElementById('materialFalta').value;
-    const quantidadeFalta = document.getElementById('quantidadeFalta').value;
-
-    // Criar conteúdo do PDF
-    const pdfContent = `
-        <h1>Relatório de Estoque</h1>
-        <p><strong>Data de Registro:</strong> ${dataRegistro}</p>
-        <p><strong>Nome do Material:</strong> ${nomeMaterial}</p>
-        <p><strong>Material em Falta:</strong> ${materialFalta}</p>
-        <p><strong>Quantidade em Falta:</strong> ${quantidadeFalta}</p>
-    `;
-
-    // Criar um novo objeto jsPDF
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+document.getElementById('gerarPDF').addEventListener('click', () => {
     const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF();
 
-    // Adicionar conteúdo ao PDF
-    pdf.setFontSize(22);
-    pdf.text("Relatório de Estoque", 10, 10);
-    pdf.setFontSize(12);
-    pdf.text(`Data de Registro: ${dataRegistro}`, 10, 20);
-    pdf.text(`Nome do Material: ${nomeMaterial}`, 10, 30);
-    pdf.text(`Material em Falta: ${materialFalta}`, 10, 40);
-    pdf.text(`Quantidade em Falta: ${quantidadeFalta}`, 10, 50);
+    const doc = new jsPDF();
 
-    // Salvar o PDF
-    pdf.save('relatorio_estoque.pdf');
-}
+    doc.text("Controle de Estoque", 10, 10);
+
+    const table = document.getElementById('estoqueTable');
+    const rows = table.rows;
+
+    let y = 20;
+    for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].cells;
+        let text = '';
+        for (let j = 0; j < cells.length; j++) {
+            text += cells[j].innerText + '\t';
+        }
+        doc.text(text, 10, y);
+        y += 10;
+    }
+
+    doc.save('controle_de_estoque.pdf');
+});
