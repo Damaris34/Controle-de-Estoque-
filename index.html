@@ -9,35 +9,26 @@
 <body>
     <div class="container">
         <h1>Controle de Estoque</h1>
+        <form id="estoqueForm">
+            <input type="date" id="dataRegistro" placeholder="Data de Registro" required>
+            <input type="text" id="nomeMaterial" placeholder="Nome do Material" required>
+            <input type="text" id="materialFalta" placeholder="Material em Falta" required>
+            <input type="file" id="foto" accept="image/*" required>
+            <button type="button" onclick="adicionarLinha()">Adicionar</button>
+        </form>
         <table id="estoqueTable">
             <thead>
                 <tr>
-                    <th>Data de Registro</th>
+                    <th>Data do Registro</th>
                     <th>Nome do Material</th>
-                    <th>Quantidade de Material que Saiu</th>
-                    <th>Falta de Material</th>
-                    <th>Nome do Material em Falta</th>
+                    <th>Material em Falta</th>
+                    <th>Foto</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Linhas serão adicionadas dinamicamente aqui -->
             </tbody>
         </table>
-        <form id="estoqueForm">
-            <input type="date" id="dataRegistro" placeholder="Data de Registro" required>
-            <input type="text" id="nomeMaterial" placeholder="Nome do Material" required>
-            <input type="number" id="quantidadeSaiu" placeholder="Quantidade de Material que Saiu" required>
-            <select id="faltaMaterial">
-                <option value="Sim">Sim</option>
-                <option value="Não">Não</option>
-            </select>
-            <input type="text" id="nomeMaterialFalta" placeholder="Nome do Material em Falta" required>
-            <button type="button" onclick="adicionarLinha()">Adicionar</button>
-        </form>
         <button id="gerarPDF">Gerar PDF</button>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+    <script src="https
