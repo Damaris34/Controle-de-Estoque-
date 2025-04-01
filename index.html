@@ -20,25 +20,24 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>2023-10-01</td>
-                    <td>Parafusos</td>
-                    <td>100</td>
-                    <td>Sim</td>
-                    <td>Parafusos de aço inoxidável</td>
-                </tr>
-                <tr>
-                    <td>2023-10-02</td>
-                    <td>Porcas</td>
-                    <td>50</td>
-                    <td>Sim</td>
-                    <td>Porcas de aço inoxidável</td>
-                </tr>
+                <!-- Linhas serão adicionadas dinamicamente aqui -->
             </tbody>
         </table>
+        <form id="estoqueForm">
+            <input type="date" id="dataRegistro" placeholder="Data de Registro" required>
+            <input type="text" id="nomeMaterial" placeholder="Nome do Material" required>
+            <input type="number" id="quantidadeSaiu" placeholder="Quantidade de Material que Saiu" required>
+            <select id="faltaMaterial">
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+            </select>
+            <input type="text" id="nomeMaterialFalta" placeholder="Nome do Material em Falta" required>
+            <button type="button" onclick="adicionarLinha()">Adicionar</button>
+        </form>
         <button id="gerarPDF">Gerar PDF</button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
