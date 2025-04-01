@@ -1,3 +1,24 @@
+function adicionarLinha() {
+    const tableBody = document.querySelector('#estoqueTable tbody');
+    const newRow = document.createElement('tr');
+
+    const dataRegistro = document.getElementById('dataRegistro').value;
+    const nomeMaterial = document.getElementById('nomeMaterial').value;
+    const quantidadeSaiu = document.getElementById('quantidadeSaiu').value;
+    const faltaMaterial = document.getElementById('faltaMaterial').value;
+    const nomeMaterialFalta = document.getElementById('nomeMaterialFalta').value;
+
+    newRow.innerHTML = `
+        <td>${dataRegistro}</td>
+        <td>${nomeMaterial}</td>
+        <td>${quantidadeSaiu}</td>
+        <td>${faltaMaterial}</td>
+        <td>${nomeMaterialFalta}</td>
+    `;
+
+    tableBody.appendChild(newRow);
+}
+
 document.getElementById('gerarPDF').addEventListener('click', () => {
     const { jsPDF } = window.jspdf;
 
@@ -20,11 +41,13 @@ document.getElementById('gerarPDF').addEventListener('click', () => {
     for (let j = 0; j < cells.length; j++) {
         headers.push(cells[j].innerText);
     }
+    const tableData = Array.from(rows).slice(1).map(row =>
+        Array.from(row.cells).map(cell => cell.innerText)
+    );
+
     doc.autoTable({
         head: [headers],
-        body: Array.from(rows).slice(1).map(row =>
-            Array.from(row.cells).map(cell => cell.innerText)
-        ),
+        body: tableData,
         startY: y
     });
 
