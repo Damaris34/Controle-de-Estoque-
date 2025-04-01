@@ -23,6 +23,32 @@ h1 {
     color: #00796b;
 }
 
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form input, form button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #004d40;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -44,32 +70,6 @@ tr:nth-child(even) {
     background-color: #e0f2f1;
 }
 
-form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-form input, form select, form button {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-form button {
-    background-color: #00796b;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: #004d40;
-}
-
 button#gerarPDF {
     display: inline-block;
     padding: 10px 20px;
@@ -85,4 +85,10 @@ button#gerarPDF {
 
 button#gerarPDF:hover {
     background-color: #004d40;
+}
+
+td img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 5px;
 }
