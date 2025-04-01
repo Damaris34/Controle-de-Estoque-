@@ -4,19 +4,21 @@ function adicionarLinha() {
 
     const dataRegistro = document.getElementById('dataRegistro').value;
     const nomeMaterial = document.getElementById('nomeMaterial').value;
-    const quantidadeSaiu = document.getElementById('quantidadeSaiu').value;
-    const faltaMaterial = document.getElementById('faltaMaterial').value;
-    const nomeMaterialFalta = document.getElementById('nomeMaterialFalta').value;
+    const materialFalta = document.getElementById('materialFalta').value;
+    const fotoInput = document.getElementById('foto');
 
-    newRow.innerHTML = `
-        <td>${dataRegistro}</td>
-        <td>${nomeMaterial}</td>
-        <td>${quantidadeSaiu}</td>
-        <td>${faltaMaterial}</td>
-        <td>${nomeMaterialFalta}</td>
-    `;
-
-    tableBody.appendChild(newRow);
+    if (fotoInput.files.length > 0) {
+        const fotoURL = URL.createObjectURL(fotoInput.files[0]);
+        newRow.innerHTML = `
+            <td>${dataRegistro}</td>
+            <td>${nomeMaterial}</td>
+            <td>${materialFalta}</td>
+            <td><img src="${fotoURL}" alt="Foto do Material"></td>
+        `;
+        tableBody.appendChild(newRow);
+    } else {
+        alert("Por favor, selecione uma foto.");
+    }
 }
 
 document.getElementById('gerarPDF').addEventListener('click', () => {
@@ -26,30 +28,4 @@ document.getElementById('gerarPDF').addEventListener('click', () => {
 
     // Adicionar título e data
     const date = new Date().toLocaleDateString();
-    doc.setFontSize(20);
-    doc.text("Controle de Estoque", 10, 10);
-    doc.setFontSize(12);
-    doc.text(`Data de Geração: ${date}`, 10, 20);
-
-    // Adicionar tabela
-    const table = document.getElementById('estoqueTable');
-    const rows = table.rows;
-
-    let y = 30;
-    const headers = [];
-    const cells = rows[0].cells;
-    for (let j = 0; j < cells.length; j++) {
-        headers.push(cells[j].innerText);
-    }
-    const tableData = Array.from(rows).slice(1).map(row =>
-        Array.from(row.cells).map(cell => cell.innerText)
-    );
-
-    doc.autoTable({
-        head: [headers],
-        body: tableData,
-        startY: y
-    });
-
-    doc.save('controle_de_estoque.pdf');
-});
+    doc.setFontSize
