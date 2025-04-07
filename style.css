@@ -1,6 +1,7 @@
+/* styles.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: #e0f7fa;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,85 +11,40 @@ body {
 }
 
 .container {
-    width: 80%;
-    max-width: 1000px;
-    background: #fff;
+    background-color: #fff;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    color: #00796b;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 form {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    flex-direction: column;
 }
 
-form input, form button {
+label {
+    margin-bottom: 5px;
+}
+
+input, select, button {
+    margin-bottom: 15px;
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-form button {
-    background-color: #00796b;
+button {
+    background-color: #28a745;
     color: white;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-form button:hover {
-    background-color: #004d40;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-th {
-    background-color: #00796b;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background-color: #e0f2f1;
-}
-
-button#gerarPDF {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #00796b;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
-
-button#gerarPDF:hover {
-    background-color: #004d40;
-}
-
-td img {
-    max-width: 100px;
-    max-height: 100px;
-    border-radius: 5px;
+button:hover {
+    background-color: #218838;
 }
