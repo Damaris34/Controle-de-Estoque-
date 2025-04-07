@@ -1,10 +1,31 @@
 // scripts.js
+document.addEventListener('DOMContentLoaded', function() {
+    const faltaMaterialSelect = document.getElementById('faltaMaterial');
+    const materialFaltaGroup = document.getElementById('materialFaltaGroup');
+    const quantidadeCompraGroup = document.getElementById('quantidadeCompraGroup');
+
+    faltaMaterialSelect.addEventListener('change', function() {
+        if (faltaMaterialSelect.value === 'sim') {
+            materialFaltaGroup.style.display = 'block';
+            quantidadeCompraGroup.style.display = 'block';
+        } else {
+            materialFaltaGroup.style.display = 'none';
+            quantidadeCompraGroup.style.display = 'none';
+        }
+    });
+});
+
 function gerarPDF() {
     const dataRegistro = document.getElementById('dataRegistro').value;
     const nomeMaterial = document.getElementById('nomeMaterial').value;
     const faltaMaterial = document.getElementById('faltaMaterial').value;
     const nomeMaterialFalta = document.getElementById('nomeMaterialFalta').value;
     const quantidadeCompra = document.getElementById('quantidadeCompra').value;
+
+    if (!dataRegistro || !nomeMaterial || !faltaMaterial) {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+        return;
+    }
 
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
