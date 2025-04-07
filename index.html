@@ -10,38 +10,37 @@
     <div class="container">
         <h1>Controle de Material</h1>
         <form id="materialForm">
-            <table>
-                <tr>
-                    <td><label for="dataRegistro">Data de Registro:</label></td>
-                    <td><input type="date" id="dataRegistro" name="dataRegistro" required></td>
-                </tr>
-                <tr>
-                    <td><label for="nomeMaterial">Nome do Material:</label></td>
-                    <td><input type="text" id="nomeMaterial" name="nomeMaterial" required></td>
-                </tr>
-                <tr>
-                    <td><label for="faltaMaterial">Falta de Material:</label></td>
-                    <td>
-                        <select id="faltaMaterial" name="faltaMaterial" required>
-                            <option value="sim">Sim</option>
-                            <option value="nao">Não</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="nomeMaterialFalta">Nome do Material em Falta:</label></td>
-                    <td><input type="text" id="nomeMaterialFalta" name="nomeMaterialFalta"></td>
-                </tr>
-                <tr>
-                    <td><label for="quantidadeCompra">Quantidade para Compra:</label></td>
-                    <td><input type="number" id="quantidadeCompra" name="quantidadeCompra" min="1"></td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: center;">
-                        <button type="button" onclick="gerarPDF()">Gerar PDF</button>
-                    </td>
-                </tr>
-            </table>
+            <div class="form-group">
+                <label for="dataRegistro">Data de Registro:</label>
+                <input type="date" id="dataRegistro" name="dataRegistro" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nomeMaterial">Nome do Material:</label>
+                <input type="text" id="nomeMaterial" name="nomeMaterial" required>
+            </div>
+
+            <div class="form-group">
+                <label for="faltaMaterial">Falta de Material:</label>
+                <select id="faltaMaterial" name="faltaMaterial" required>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="nomeMaterialFalta">Nome do Material em Falta:</label>
+                <input type="text" id="nomeMaterialFalta" name="nomeMaterialFalta">
+            </div>
+
+            <div class="form-group">
+                <label for="quantidadeCompra">Quantidade para Compra:</label>
+                <input type="number" id="quantidadeCompra" name="quantidadeCompra" min="1">
+            </div>
+
+            <div class="form-group button-group">
+                <button type="button" onclick="gerarPDF()">Gerar PDF</button>
+            </div>
         </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
