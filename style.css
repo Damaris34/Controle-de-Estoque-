@@ -6,61 +6,68 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f8ff; /* Azul claro para o fundo */
+    background-color: #e0f7fa; /* Azul claro para o fundo */
 }
 
 .container {
     background-color: #fff;
-    padding: 30px;
+    padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     width: 90%;
     max-width: 800px;
     text-align: center;
 }
 
 h1 {
-    color: #333;
+    color: #004d40;
     margin-bottom: 20px;
 }
 
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+.card {
+    background-color: #e0f2f1;
+    padding: 20px;
+    border-radius: 10px;
     margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #004d40;
+    margin-bottom: 15px;
 }
 
 .form-group {
-    flex: 1;
     text-align: left;
+    margin-bottom: 15px;
 }
 
 label {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
-    color: #555;
+    color: #263238;
 }
 
 input, select, button {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ced4da;
-    border-radius: 8px;
+    border: 1px solid #b0bec5;
+    border-radius: 5px;
     font-size: 1em;
 }
 
 button {
-    background-color: #007bff;
+    background-color: #00796b;
     color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #004d40;
 }
 
 button + button {
@@ -72,11 +79,11 @@ button + button {
 }
 
 @media (max-width: 600px) {
-    .form-row {
-        flex-direction: column;
+    .container {
+        padding: 15px;
     }
 
-    .form-group {
-        margin-bottom: 15px;
+    .card {
+        padding: 15px;
     }
 }
