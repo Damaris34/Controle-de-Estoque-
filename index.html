@@ -10,7 +10,8 @@
     <div class="container">
         <h1>Controle de Material</h1>
         <form id="materialForm">
-            <div class="form-row">
+            <div class="card">
+                <h2>Informações Básicas</h2>
                 <div class="form-group">
                     <label for="dataRegistro">Data de Registro:</label>
                     <input type="date" id="dataRegistro" name="dataRegistro" required>
@@ -21,7 +22,8 @@
                 </div>
             </div>
 
-            <div class="form-row">
+            <div class="card">
+                <h2>Controle de Estoque</h2>
                 <div class="form-group">
                     <label for="faltaMaterial">Falta de Material:</label>
                     <select id="faltaMaterial" name="faltaMaterial" required>
@@ -34,17 +36,15 @@
                     <label for="nomeMaterialFalta">Nome do Material em Falta:</label>
                     <input type="text" id="nomeMaterialFalta" name="nomeMaterialFalta">
                 </div>
-            </div>
-
-            <div class="form-row">
                 <div class="form-group" id="quantidadeCompraGroup">
                     <label for="quantidadeCompra">Quantidade para Compra:</label>
                     <input type="number" id="quantidadeCompra" name="quantidadeCompra" min="1">
                 </div>
-                <div class="form-group button-group">
-                    <button type="button" onclick="gerarPDF()">Gerar PDF</button>
-                    <button type="reset">Limpar</button>
-                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" onclick="gerarPDF()">Gerar PDF</button>
+                <button type="reset">Limpar</button>
             </div>
         </form>
     </div>
