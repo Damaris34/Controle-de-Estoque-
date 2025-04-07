@@ -1,31 +1,6 @@
-/* styles.css */
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f4f4f4;
-}
-
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
-}
-
-h1 {
-    margin-bottom: 20px;
-}
-
 .form-group {
     text-align: left;
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* Aumentamos o espaçamento entre os grupos de formulário */
 }
 
 label {
@@ -40,27 +15,4 @@ input, select, button {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-top: 5px;
-}
-
-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-.form-text {
-    color: #6c757d;
-    font-size: 0.875em;
-}
-
-@media (max-width: 600px) {
-    .container {
-        padding: 15px;
-    }
 }
