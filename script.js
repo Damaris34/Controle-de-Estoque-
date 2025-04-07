@@ -12,4 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
             quantidadeCompraGroup.style.display = 'none';
         }
     });
+
+    document.getElementById('dataRegistro').focus();
 });
+
+function gerarPDF() {
+    // Lógica de geração de PDF...
+}
