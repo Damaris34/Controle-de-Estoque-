@@ -6,6 +6,7 @@ function gerarPDF() {
     const nomeMaterialFalta = document.getElementById('nomeMaterialFalta').value;
     const quantidadeCompra = document.getElementById('quantidadeCompra').value;
 
+    const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
     doc.text(`Controle de Material - ${new Date().toLocaleDateString()}`, 10, 10);
     doc.text(`Data de Registro: ${dataRegistro}`, 10, 20);
