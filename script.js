@@ -5,19 +5,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/registrar")
-public class RegistroServlet extends HttpServlet {
+@WebServlet("/adicionarMaterial")
+public class AdicionarMaterialServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String dataRegistro = request.getParameter("dataRegistro");
-        String materialUtilizado = request.getParameter("materialUtilizado");
-        String materialFalta = request.getParameter("materialFalta");
+        String codigo = request.getParameter("codigo");
+        String nome = request.getParameter("nome");
+        int quantidade = Integer.parseInt(request.getParameter("quantidade"));
+        String descricao = request.getParameter("descricao");
 
-        // Aqui você pode adicionar a lógica para salvar os dados no banco de dados ou em um arquivo
+        // Aqui você pode adicionar a lógica para salvar os dados no banco de dados
 
-        // Redirecionar de volta para a página principal
+        // Redireciona de volta para a página principal
         response.sendRedirect("index.html");
     }
 }
-document.addEventListener('DOMContentLoaded', function() {
-    // Aqui você pode adicionar a lógica para carregar os materiais em falta do servidor e exibi-los na lista
-});
