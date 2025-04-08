@@ -10,9 +10,12 @@
     <div class="container">
         <h1>Controle de Estoque</h1>
         <div class="stock-form">
-            <input type="text" id="item-name" placeholder="Nome do Item">
+            <input type="text" id="item-name" placeholder="Nome do Material">
             <input type="number" id="item-quantity" placeholder="Quantidade">
-            <button onclick="addItem()">Adicionar Item</button>
+            <input type="date" id="registration-date" placeholder="Data de Registro">
+            <input type="date" id="entry-date" placeholder="Data de Entrada">
+            <input type="date" id="exit-date" placeholder="Data de Saída">
+            <button onclick="addItem()">Adicionar Material</button>
         </div>
         <ul id="stock-list">
             <!-- Itens do estoque serão listados aqui -->
@@ -21,4 +24,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
