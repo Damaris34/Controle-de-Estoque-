@@ -7,25 +7,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Controle de Estoque</h1>
-    <form action="/registrar" method="post">
-        <label for="dataRegistro">Data de Registro:</label>
-        <input type="date" id="dataRegistro" name="dataRegistro" required>
-        <br>
-        <label for="materialUtilizado">Material Utilizado:</label>
-        <input type="text" id="materialUtilizado" name="materialUtilizado" required>
-        <br>
-        <label for="materialFalta">Material em Falta:</label>
-        <input type="text" id="materialFalta" name="materialFalta">
-        <br>
-        <button type="submit">Registrar</button>
-    </form>
+    <div class="container">
+        <h1>Controle de Material</h1>
+        <h2>Informações Básicas</h2>
+        <form>
+            <label for="dataRegistro">Data de Registro:</label>
+            <input type="date" id="dataRegistro" name="dataRegistro">
 
-    <h2>Materiais em Falta</h2>
-    <ul id="materiaisFalta">
-        <!-- Materiais em falta serão listados aqui -->
-    </ul>
+            <label for="nomeMaterial">Nome do Material:</label>
+            <input type="text" id="nomeMaterial" name="nomeMaterial">
 
-    <script src="scripts.js"></script>
+            <h2>Controle de Estoque</h2>
+            <label for="faltaMaterial">Falta de Material:</label>
+            <input type="text" id="faltaMaterial" name="faltaMaterial">
+
+            <label for="nomeMaterialFalta">Nome do Material em Falta:</label>
+            <input type="text" id="nomeMaterialFalta" name="nomeMaterialFalta">
+
+            <label for="quantidadeCompra">Quantidade para Compra:</label>
+            <input type="number" id="quantidadeCompra" name="quantidadeCompra">
+
+            <label for="local">Local:</label>
+            <input type="text" id="local" name="local">
+
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
 </body>
 </html>
