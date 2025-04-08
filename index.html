@@ -4,7 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Estoque</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 1000px;
+            text-align: center;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 15px 0;
+            border-radius: 8px 8px 0 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .section h2 {
+            font-size: 1.6em;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+        form button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background: #0056b3;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+        .card p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -12,33 +110,33 @@
             <h1>Sistema de Controle de Estoque</h1>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="entrada.html">Entrada de Materiais</a></li>
-                    <li><a href="saida.html">Saída de Materiais</a></li>
-                    <li><a href="relatorios.html">Relatórios</a></li>
-                    <li><a href="compras.html">Controle de Compras</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Entrada de Materiais</a></li>
+                    <li><a href="#">Saída de Materiais</a></li>
+                    <li><a href="#">Relatórios</a></li>
+                    <li><a href="#">Controle de Compras</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <div class="section">
                 <h2>Adicionar Material ao Estoque</h2>
-                <form action="adicionarMaterial" method="post">
+                <form>
                     <div class="form-group">
                         <label for="codigo">Código do Material:</label>
-                        <input type="text" id="codigo" name="codigo" required>
+                        <input type="text" id="codigo" name="codigo">
                     </div>
                     <div class="form-group">
                         <label for="nome">Nome do Material:</label>
-                        <input type="text" id="nome" name="nome" required>
+                        <input type="text" id="nome" name="nome">
                     </div>
                     <div class="form-group">
                         <label for="quantidade">Quantidade no Estoque:</label>
-                        <input type="number" id="quantidade" name="quantidade" required>
+                        <input type="number" id="quantidade" name="quantidade">
                     </div>
                     <div class="form-group">
                         <label for="descricao">Descrição do Material:</label>
-                        <textarea id="descricao" name="descricao" required></textarea>
+                        <textarea id="descricao" name="descricao"></textarea>
                     </div>
                     <button type="submit">Adicionar</button>
                 </form>
@@ -59,6 +157,5 @@
             </div>
         </main>
     </div>
-    <script src="scripts.js"></script>
 </body>
 </html>
