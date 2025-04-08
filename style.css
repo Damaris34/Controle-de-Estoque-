@@ -14,7 +14,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 350px;
 }
 
 h1 {
@@ -56,8 +56,11 @@ h1 {
     padding: 10px;
     border-bottom: 1px solid #ccc;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+}
+
+#stock-list li span {
+    margin-bottom: 5px;
 }
 
 #stock-list li button {
@@ -67,6 +70,7 @@ h1 {
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
+    align-self: flex-start;
 }
 
 #stock-list li button:hover {
