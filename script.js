@@ -15,9 +15,12 @@ public class AdicionarMaterialServlet extends HttpServlet {
         int quantidade = Integer.parseInt(request.getParameter("quantidade"));
         String descricao = request.getParameter("descricao");
 
-        // Aqui você pode adicionar a lógica para salvar os dados no banco de dados
+        // Lógica para adicionar ao banco de dados
 
         // Redireciona de volta para a página principal
         response.sendRedirect("index.html");
     }
 }
+document.addEventListener('DOMContentLoaded', function() {
+    // Adicione scripts para interatividade conforme necessário
+});
