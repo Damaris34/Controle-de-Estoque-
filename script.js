@@ -1,23 +1,22 @@
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+function addItem() {
+    const itemName = document.getElementById('item-name').value;
+    const itemQuantity = document.getElementById('item-quantity').value;
 
-@WebServlet("/AdicionarMaterialServlet")
-public class AdicionarMaterialServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+    if (itemName && itemQuantity) {
+        const stockList = document.getElementById('stock-list');
+        const listItem = document.createElement('li');
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String codigo = request.getParameter("codigo");
-        String nome = request.getParameter("nome");
-        int quantidade = Integer.parseInt(request.getParameter("quantidade"));
-        String descricao = request.getParameter("descricao");
+        listItem.innerHTML = `${itemName} - Quantidade: ${itemQuantity} <button onclick="removeItem(this)">Remover</button>`;
+        stockList.appendChild(listItem);
 
-        // Aqui você pode adicionar a lógica para salvar os dados no banco de dados
-
-        // Redireciona de volta para a página principal
-        response.sendRedirect("index.html");
+        document.getElementById('item-name').value = '';
+        document.getElementById('item-quantity').value = '';
+    } else {
+        alert('Por favor, preencha todos os campos.');
     }
+}
+
+function removeItem(button) {
+    const listItem = button.parentElement;
+    listItem.remove();
 }
