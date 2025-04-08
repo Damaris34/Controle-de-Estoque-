@@ -8,9 +8,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>Controle de Material</h1>
+        <header>
+            <h1>Controle de Material</h1>
+        </header>
         <form id="materialForm">
-            <div class="card">
+            <section class="form-section">
                 <h2>Informações Básicas</h2>
                 <div class="form-group">
                     <label for="dataRegistro">Data de Registro:</label>
@@ -20,9 +22,9 @@
                     <label for="nomeMaterial">Nome do Material:</label>
                     <input type="text" id="nomeMaterial" name="nomeMaterial" required>
                 </div>
-            </div>
+            </section>
 
-            <div class="card">
+            <section class="form-section">
                 <h2>Controle de Estoque</h2>
                 <div class="form-group">
                     <label for="faltaMaterial">Falta de Material:</label>
@@ -40,7 +42,7 @@
                     <label for="quantidadeCompra">Quantidade para Compra:</label>
                     <input type="number" id="quantidadeCompra" name="quantidadeCompra" min="1">
                 </div>
-            </div>
+            </section>
 
             <div class="button-group">
                 <button type="button" onclick="gerarPDF()">Gerar PDF</button>
