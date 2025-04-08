@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/adicionarMaterial")
+@WebServlet("/AdicionarMaterialServlet")
 public class AdicionarMaterialServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -15,12 +15,9 @@ public class AdicionarMaterialServlet extends HttpServlet {
         int quantidade = Integer.parseInt(request.getParameter("quantidade"));
         String descricao = request.getParameter("descricao");
 
-        // Lógica para adicionar ao banco de dados
+        // Aqui você pode adicionar a lógica para salvar os dados no banco de dados
 
         // Redireciona de volta para a página principal
         response.sendRedirect("index.html");
     }
 }
-document.addEventListener('DOMContentLoaded', function() {
-    // Adicione scripts para interatividade conforme necessário
-});
