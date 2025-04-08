@@ -3,54 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Controle de Material</title>
+    <title>Controle de Estoque</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Controle de Material</h1>
-        </header>
-        <form id="materialForm">
-            <section class="form-section">
-                <h2>Informações Básicas</h2>
-                <div class="form-group">
-                    <label for="dataRegistro">Data de Registro:</label>
-                    <input type="date" id="dataRegistro" name="dataRegistro" required>
-                </div>
-                <div class="form-group">
-                    <label for="nomeMaterial">Nome do Material:</label>
-                    <input type="text" id="nomeMaterial" name="nomeMaterial" required>
-                </div>
-            </section>
+    <h1>Controle de Estoque</h1>
+    <form action="/registrar" method="post">
+        <label for="dataRegistro">Data de Registro:</label>
+        <input type="date" id="dataRegistro" name="dataRegistro" required>
+        <br>
+        <label for="materialUtilizado">Material Utilizado:</label>
+        <input type="text" id="materialUtilizado" name="materialUtilizado" required>
+        <br>
+        <label for="materialFalta">Material em Falta:</label>
+        <input type="text" id="materialFalta" name="materialFalta">
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
 
-            <section class="form-section">
-                <h2>Controle de Estoque</h2>
-                <div class="form-group">
-                    <label for="faltaMaterial">Falta de Material:</label>
-                    <select id="faltaMaterial" name="faltaMaterial" required>
-                        <option value="">Selecione</option>
-                        <option value="sim">Sim</option>
-                        <option value="nao">Não</option>
-                    </select>
-                </div>
-                <div class="form-group" id="materialFaltaGroup">
-                    <label for="nomeMaterialFalta">Nome do Material em Falta:</label>
-                    <input type="text" id="nomeMaterialFalta" name="nomeMaterialFalta">
-                </div>
-                <div class="form-group" id="quantidadeCompraGroup">
-                    <label for="quantidadeCompra">Quantidade para Compra:</label>
-                    <input type="number" id="quantidadeCompra" name="quantidadeCompra" min="1">
-                </div>
-            </section>
+    <h2>Materiais em Falta</h2>
+    <ul id="materiaisFalta">
+        <!-- Materiais em falta serão listados aqui -->
+    </ul>
 
-            <div class="button-group">
-                <button type="button" onclick="gerarPDF()">Gerar PDF</button>
-                <button type="reset">Limpar</button>
-            </div>
-        </form>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
