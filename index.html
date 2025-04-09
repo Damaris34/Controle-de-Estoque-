@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Materiais</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Controle de Materiais</h1>
+        <form id="materialForm">
+            <label for="registrationDate">Data de Registro:</label>
+            <input type="date" id="registrationDate" name="registrationDate" required>
+
+            <label for="materialName">Nome do Material:</label>
+            <input type="text" id="materialName" name="materialName" required>
+
+            <label for="quantity">Quantidade:</label>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <label for="missingMaterialName">Nome do Material em Falta:</label>
+            <input type="text" id="missingMaterialName" name="missingMaterialName">
+
+            <label for="missingQuantity">Quantidade em Falta:</label>
+            <input type="number" id="missingQuantity" name="missingQuantity">
+
+            <label for="entryDate">Data de Entrada:</label>
+            <input type="date" id="entryDate" name="entryDate">
+
+            <label for="exitDate">Data de Saída:</label>
+            <input type="date" id="exitDate" name="exitDate">
+
+            <button type="button" onclick="saveAsPDF()">Salvar como PDF</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
 
