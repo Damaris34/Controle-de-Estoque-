@@ -10,36 +10,16 @@
     <div class="container">
         <h1>Controle de Estoque</h1>
         <form id="estoqueForm">
-            <label for="dataRegistro">Data de Registro:</label>
-            <input type="date" id="dataRegistro" name="dataRegistro" required><br>
+            <div class="form-group">
+                <label for="dataRegistro">Data de Registro:</label>
+                <input type="date" id="dataRegistro" name="dataRegistro" required>
+            </div>
 
-            <label for="localizacao">Localização dos pontos:</label>
-            <input type="text" id="localizacao" name="localizacao" required><br>
+            <div class="form-group">
+                <label for="localizacao">Localização dos pontos:</label>
+                <input type="text" id="localizacao" name="localizacao" required>
+            </div>
 
-            <label for="saidaTratamento">Saída de Tratamento:</label>
-            <input type="text" id="saidaTratamento" name="saidaTratamento" required><br>
-
-            <label for="cozinha">Cozinha:</label>
-            <input type="text" id="cozinha" name="cozinha" required><br>
-
-            <label for="producao">Produção:</label>
-            <input type="text" id="producao" name="producao" required><br>
-
-            <label for="administracao">Administração:</label>
-            <input type="text" id="administracao" name="administracao" required><br>
-
-            <label for="recebimento">Recebimento:</label>
-            <input type="text" id="recebimento" name="recebimento" required><br>
-
-            <label for="foto">Adicionar Foto:</label>
-            <input type="file" id="foto" name="foto" accept="image/*" required><br>
-
-            <img id="fotoPreview" src="#" alt="Preview da Foto" style="display:none; max-width: 100%; margin-top: 10px;"><br>
-
-            <button type="button" onclick="gerarPDF()">Gerar PDF</button>
-        </form>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+            <div class="form-group">
+                <label for="saidaTratamento">Saída de Tratamento:</label>
+                <input type="text" id="saidaTratamento" name="saidaTrat
