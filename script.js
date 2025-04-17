@@ -20,5 +20,8 @@ function gerarPDF() {
         jsPDF: { format: 'a4' }
     };
 
-    html2pdf().from(pdfContent).set(opt).save();
+    const element = document.createElement('div');
+    element.innerHTML = pdfContent;
+
+    html2pdf().from(element).set(opt).save();
 }
