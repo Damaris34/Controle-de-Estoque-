@@ -3,23 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Controle de Estoque</title>
+    <title>Gerador de PDF</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Controle de Estoque</h1>
-        <form id="estoqueForm">
-            <div class="form-group">
-                <label for="dataRegistro">Data de Registro:</label>
-                <input type="date" id="dataRegistro" name="dataRegistro" required>
-            </div>
+        <h1>Gerador de PDF</h1>
+        <form id="pdfForm">
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data" required><br><br>
 
-            <div class="form-group">
-                <label for="localizacao">Localização dos pontos:</label>
-                <input type="text" id="localizacao" name="localizacao" required>
-            </div>
+            <label for="localizacao">Ponto de Localização:</label>
+            <select id="localizacao" name="localizacao" required>
+                <option value="">Selecione</option>
+                <option value="Saída de Tratamento">Saída de Tratamento</option>
+                <option value="Cozinha">Cozinha</option>
+                <option value="Produção">Produção</option>
+                <option value="Administração">Administração</option>
+                <option value="Recebimento">Recebimento</option>
+            </select><br><br>
 
-            <div class="form-group">
-                <label for="saidaTratamento">Saída de Tratamento:</label>
-                <input type="text" id="saidaTratamento" name="saidaTrat
+            <button type="button" onclick="gerarPDF()">Gerar PDF</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
