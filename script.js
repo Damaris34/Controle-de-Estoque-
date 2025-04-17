@@ -1,3 +1,15 @@
+document.getElementById('foto').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('fotoPreview').src = e.target.result;
+            document.getElementById('fotoPreview').style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
 document.getElementById('estoqueForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
